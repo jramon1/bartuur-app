@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:show, :edit, :update]
 
     resources :products do
-      resources :media
+      resources :pictures
     end
 
     resource :matches, only: [:index, :show] do
