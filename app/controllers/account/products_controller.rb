@@ -29,7 +29,7 @@ class Account::ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:name, :description, :photos)
+      params.require(:product).permit(:name, :description, :photos [])
     end
 
     def set_account
