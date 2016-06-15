@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614150407) do
+ActiveRecord::Schema.define(version: 20160615102648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(version: 20160614150407) do
 
   add_index "appreciations", ["product_id"], name: "index_appreciations_on_product_id", using: :btree
   add_index "appreciations", ["user_id"], name: "index_appreciations_on_user_id", using: :btree
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.string   "pic_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
   create_table "matches", force: :cascade do |t|
     t.integer  "code"
@@ -49,16 +66,6 @@ ActiveRecord::Schema.define(version: 20160614150407) do
 
   add_index "messages", ["match_id"], name: "index_messages_on_match_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "pictures", force: :cascade do |t|
-    t.string   "name"
-    t.string   "picture"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "pictures", ["product_id"], name: "index_pictures_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -103,6 +110,5 @@ ActiveRecord::Schema.define(version: 20160614150407) do
   add_foreign_key "matches", "appreciations", column: "secondary_appreciation_id"
   add_foreign_key "messages", "matches"
   add_foreign_key "messages", "users"
-  add_foreign_key "pictures", "products"
   add_foreign_key "products", "users"
 end
