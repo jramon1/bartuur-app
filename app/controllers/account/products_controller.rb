@@ -5,12 +5,12 @@ class Account::ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def create
-    @product = Product.create
+  def new
+    @product = Product.new
   end
 
-  def new
-    @product = Product.new(product_params)
+  def create
+    @product = Product.create(product_params)
   end
 
   def edit
