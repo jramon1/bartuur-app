@@ -116,9 +116,7 @@ Rails.application.routes.draw do
   namespace :account do
     resource :profile, only: [:show, :edit, :update]
 
-    resources :products do
-      resources :pictures
-    end
+    resources :products
 
     resource :matches, only: [:index, :show] do
       resource :messages, only: [:show, :create, :new]
