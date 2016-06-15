@@ -20,6 +20,7 @@ gem "cloudinary"
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
