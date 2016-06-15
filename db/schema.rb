@@ -11,10 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614133719) do
+ActiveRecord::Schema.define(version: 20160614150407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appreciations", force: :cascade do |t|
+    t.boolean  "liked",      default: false
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "appreciations", ["product_id"], name: "index_appreciations_on_product_id", using: :btree
+  add_index "appreciations", ["user_id"], name: "index_appreciations_on_user_id", using: :btree
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "code"
+    t.integer  "appreciation_id"
+    t.integer  "secondary_appreciation_id"
+    t.integer  "integer"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "matches", ["appreciation_id"], name: "index_matches_on_appreciation_id", using: :btree
+  add_index "matches", ["secondary_appreciation_id"], name: "index_matches_on_secondary_appreciation_id", using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["match_id"], name: "index_messages_on_match_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pictures", ["product_id"], name: "index_pictures_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "dislikes",    default: 0
+    t.boolean  "delivered",   default: false
+    t.integer  "value"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,9 +86,23 @@ ActiveRecord::Schema.define(version: 20160614133719) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "profile_picture"
+    t.string   "street"
+    t.string   "zip_code"
+    t.string   "city"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "appreciations", "products"
+  add_foreign_key "appreciations", "users"
+  add_foreign_key "matches", "appreciations"
+  add_foreign_key "matches", "appreciations", column: "secondary_appreciation_id"
+  add_foreign_key "messages", "matches"
+  add_foreign_key "messages", "users"
+  add_foreign_key "pictures", "products"
+  add_foreign_key "products", "users"
 end
