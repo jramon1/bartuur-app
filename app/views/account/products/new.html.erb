@@ -5,7 +5,7 @@
       <h1>Create Product</h1>
       <p>Hello, gogogo create your first product</p>
 
-      <%=  simple_form_for [@account, @product], url: new_account_product_path(@account) do |f| %>
+      <%=  simple_form_for [:account, @product] do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :photos, as: :attachinary %>
