@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def show
     @product = Product.find(params[:id])
 
@@ -10,13 +9,5 @@ class ProductsController < ApplicationController
     @appreciation_negative          = Appreciation.new
     @appreciation_negative.product  = @product
     @appreciation_negative.liked    = false
-
   end
-
-  def product_params
-    params.require(:product).permit(:name, :description, photos: [])
-  end
-
-
-
 end
