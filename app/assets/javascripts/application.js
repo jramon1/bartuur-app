@@ -4,4 +4,5 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require_tree .
+//= require owl.carousel
+//= require_tree

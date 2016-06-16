@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_product, only [:show]
+  before_action :find_product, only: [:show]
 
   def show
   end
