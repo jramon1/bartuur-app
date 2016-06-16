@@ -11,3 +11,12 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 CLOUDINARY_URL: "cloudinary://989773842178113:9ftQcN48Db49ozJV9rLn7IIZI0Q@waltervanwoudenberg"
+
+development:
+  FB_ID: "1757693834472793"
+  FB_SECRET: "28d26be9a49fcd5758f15c363ab70bfc"
+
+production:
+  FB_ID: "1757682431140600"
+  FB_SECRET: "9c306091d4caebb09585177084488be7"
+
