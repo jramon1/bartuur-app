@@ -9,16 +9,17 @@ justify-content:center;
 flex-direction:column;
 }
 
-
-.logo{
-width:120px;
-height:120px;
-margin:50px;
+.logo {
+font-family: Ubuntu condensed,sans-serif;
+font-size: 120px;
+color: #50C878;
 }
 
-.btn-facebook{
-background-color: #2D4373;
-color: white;
-border-color: #2D4373;
+p.logging{
+margin: 20px 32px 0px 0px;
 }
 
+h2.company-name{
+padding-top: 10px;
+padding-bottom:10px;
+}
