@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-  scope: 'email', info_fields: 'email, first_name,last_name', image_size: 'large'
+  scope: 'email, user_friends', info_fields: 'email, first_name,last_name, friends', image_size: 'large'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -10,7 +10,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '833452264628be776c45e2989919cce24018015bd47b78b4ec493c9f65ede1d505b4ad11e0cdde866388dfa85403ece47cbdabe7bc793ef94d4cd400dccaa116'
 
-  # ==> Mailer Configuration
+  # ==> Mailer configurations
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
