@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Product.destroy_all
+
+x = Product.create(name: "pen", description: "nice black pen never used")
+x.photos << "http://unsplash.it/500/500"
