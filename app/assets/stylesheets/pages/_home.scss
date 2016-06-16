@@ -2,3 +2,24 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.home-page{
+display: flex;
+align-items: center;
+justify-content:center;
+flex-direction:column;
+}
+
+.logo {
+font-family: Ubuntu condensed,sans-serif;
+font-size: 120px;
+color: #50C878;
+}
+
+p.logging{
+margin: 20px 32px 0px 0px;
+}
+
+h2.company-name{
+padding-top: 10px;
+padding-bottom:10px;
+}
