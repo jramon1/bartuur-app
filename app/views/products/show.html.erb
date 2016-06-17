@@ -22,53 +22,58 @@
 
 
 <!-- Mike's work product description -->
+<div class="carousel-container">
+<div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @product.photos.each_with_index do |photo, index| %>
+    <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
+    <%end  %>
+  </ol>
 
-  <div class="container">
-
-    <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <% @product.photos.each_with_index do |photo, index| %>
-        <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @product.photos.each_with_index do |photo, index| %>
+    <%if index == 0 %>
+    <div class="item active">
+      <%else  %>
+      <div class="item">
         <%end  %>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% @product.photos.each_with_index do |photo, index| %>
-        <%if index == 0 %>
-        <div class="item active">
-          <%else  %>
-          <div class="item">
-            <%end  %>
-            <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <%end  %>
+        <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <div class="carousel-caption">
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
+      <%end  %>
     </div>
 
-    <div class="product-descritpion">
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
 
+  <div class="product-container">
+    <div class="product-name">
       <%=@product.name %>
+    </div>
+    <div class="product-description">
       <%=@product.description %>
+    </div>
+    <div class="user-extra-info">
       <%=@user.first_name %>
       <%=@user.last_name %>
       <%= cl_image_tag @user.picture, class:"avatar" %>
-      <%=@user.friends_count  %>
+      <div class="friends_count">
+<p>Facebook friends : <%=@user.friends_count  %> </p>
 
+      </div>
     </div>
+  </div>
 
 
