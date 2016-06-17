@@ -2,8 +2,6 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show]
 
   def show
-
-    @product = Product.find(params[:id])
   end
 
   private
@@ -13,6 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def find_product
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
   end
 end
