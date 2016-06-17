@@ -1,17 +1,29 @@
 
-<!-- arrow left icon -->
-<i class="fa fa-arrow-left" aria-hidden="true"></i>
-
 <div class="navbar-wagon">
   <!-- icon on the left side -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+  <%= link_to "#", class: "navbar-wagon-gray" do %>
+    <i class="fa fa-arrow-left"></i>
+    <% end %>
 
+  <div>
+    <ul class="list-inline">
+      <li>
+        <div class="avatar">
+          <img src="#">
+        </div>
+      </li>
+      <li>
+        <h3>Sophie</h3>
+      </li>
+    </ul>
+  </div>
 
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right">
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+    <div class="avatar-square">
+      <img src="#">
+    </div>
+    <% end %>
 
-
-
+  </div>
 </div>

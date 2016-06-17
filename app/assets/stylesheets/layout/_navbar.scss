@@ -19,16 +19,23 @@
   width: 100%;
 }
 
-/* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
-}
-
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-wagon-gray {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $gray;
+}
+
+.navbar-wagon-gray:hover {
+  color: $gray;
+  text-decoration: none;
 }
 
 /* Navbar item */
@@ -64,4 +71,8 @@
   color: white;
   background: #D23333;
   border-color: #ac2626;
+}
+
+.icon-big {
+  font-size: 27px;
 }
