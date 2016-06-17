@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
 
   def show
 
+    @user = @product.user
+
     @appreciation_positive          = Appreciation.new
     @appreciation_positive.product  = @product
     @appreciation_positive.liked    = true
@@ -12,6 +14,7 @@ class ProductsController < ApplicationController
     @appreciation_negative.product  = @product
     @appreciation_negative.liked    = false
   end
+
 
   private
 
