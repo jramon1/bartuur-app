@@ -2,6 +2,8 @@
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
+<%= @product.name %>
+
 
 <div class="owl-carousel">
   <div> Your Content </div>
@@ -15,4 +17,14 @@
 </div>
 
 
+<%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+  <%= f.hidden_field :liked %>
+  <%= f.button :submit, "Like" %>
+<% end %>
+
+
+<%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
+  <%= f.hidden_field :liked %>
+  <%= f.button :submit, "Dislike" %>
+<% end %>
 
