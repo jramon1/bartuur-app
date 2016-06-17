@@ -10,6 +10,10 @@
   justify-content: space-between;
 }
 
+.center-fa {
+  margin-left: -20px;
+}
+
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -42,7 +46,6 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
 }
 
 /* Navbar standard link */
