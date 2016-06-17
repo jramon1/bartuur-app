@@ -14,8 +14,9 @@ class Account::ProductsController < ApplicationController
     @product = current_user.products.new(product_params)
 
     if @product.save
-      flash[:notice] = "Succesfully added your product"
-      redirect_to account_products_path(@products)
+      flash[:success] = "Succesfully added your product"
+      # redirect_to account_products_path(@products)
+      redirect_to product_path(Product.all.sample)
     else
       render :new
     end
