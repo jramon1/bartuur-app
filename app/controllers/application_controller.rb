@@ -5,5 +5,5 @@ class ApplicationController < ActionController::Base
 
 
   # temporarily commented to work on testing
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 end
