@@ -1,9 +1,18 @@
+
 <div class="container">
+<div class="show-page">
 <h1>Products</h1>
+
 <% @product.photos.each do |photo| %>
   <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
-<%= @product.name %>
+
+<!-- <div class="card">
+<img class="card-img-top" data-src="..." alt="Card image cap">
+<div class="card-block"> -->
+
+<h4 class="card-title"><%= @product.name %></h4>
+<p class="card-text"><%= @product.description %></p>
 
 
 <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
@@ -41,14 +50,36 @@
 </div>
 </div>
 
+<!-- <div class="owl-carousel">
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  ...
+</div>
+
+ -->
+<div container>
+<div row>
+
+
+<div class="col-xs-6">
 <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
   <%= f.hidden_field :liked %>
   <%= f.button :submit, "Like" %>
 <% end %>
+</div>
 
-
+<div class="col-xs-6">
 <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
   <%= f.hidden_field :liked %>
   <%= f.button :submit, "Dislike" %>
 <% end %>
-
+</div>
+</div>
+</div>
+</div>
+</div>
