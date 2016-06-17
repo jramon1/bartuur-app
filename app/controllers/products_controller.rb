@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show]
 
   def show
-    @product = Product.find(params[:id])
 
     @appreciation_positive          = Appreciation.new
     @appreciation_positive.product  = @product
@@ -12,7 +11,6 @@ class ProductsController < ApplicationController
     @appreciation_negative          = Appreciation.new
     @appreciation_negative.product  = @product
     @appreciation_negative.liked    = false
-
   end
 
   private
@@ -22,6 +20,6 @@ class ProductsController < ApplicationController
   end
 
   def find_product
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
   end
 end
