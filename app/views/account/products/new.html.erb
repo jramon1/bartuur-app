@@ -6,10 +6,17 @@
       <p>Hello, gogogo create your first product</p>
 
       <%=  simple_form_for [:account, @product] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
+      <div class="form-inputs">
         <%= f.input :photos, as: :attachinary %>
-        <%= f.submit %>
+        <%= f.input :name %>
+        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10} %>
+        <%= f.input :value, as: :integer %>
+      </div>
+
+        <div class="form-actions">
+          <%= f.submit %>
+        </div>
+
       <% end %>
     </div>
   </div>

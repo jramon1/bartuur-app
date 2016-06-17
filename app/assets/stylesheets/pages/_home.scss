@@ -3,23 +3,33 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 .home-page{
-display: flex;
-align-items: center;
-justify-content:center;
-flex-direction:column;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction:column;
 }
 
 .logo {
-font-family: Ubuntu condensed,sans-serif;
-font-size: 120px;
-color: #50C878;
+  font-family: $header-font;
+  font-size: 120px;
+  color: $green;
+}
+
+.logo-small {
+  font-family: $header-font;
+  font-size: 34px;
+  color: $green;
+}
+.logo-small:hover {
+  text-decoration: none;
+  color: $green;
 }
 
 p.logging{
-margin: 20px 32px 0px 0px;
+  margin: 20px 32px 0px 0px;
 }
 
 h2.company-name{
-padding-top: 10px;
-padding-bottom:10px;
+  padding-top: 10px;
+  padding-bottom:10px;
 }
