@@ -4,7 +4,7 @@
 
   <div class="thumbnail">
     <% if @product.photos.any? %>
-      <%= cl_image_tag product.photos.first.path, height: 200 %>
+      <%= cl_image_tag @product.photos.first.path, height: 200 %>
     <% end %>
 
     <div class="caption">
