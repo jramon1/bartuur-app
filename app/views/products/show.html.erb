@@ -1,14 +1,12 @@
 <div class="show-page">
-  <h1>Products</h1>
-
-  <% @product.photos.each do |photo| %>
-
+  <h1>Products(walter has a mangina)</h1>
 
   <div class="thumbnail">
-    <%= cl_image_tag product.photos.first.path,height: 200 %>
+    <% if @product.photos.any? %>
+      <%= cl_image_tag product.photos.first.path, height: 200 %>
     <% end %>
-    <div class="caption">
 
+    <div class="caption">
       <h3><%= @product.name %></h3>
       <p><%= @product.description %></p>
 
