@@ -1,10 +1,14 @@
 
 <div class="show-page">
-  <h1>Products(walter has a mangina)</h1>
+  <h1>Products</h1>
 
   <div class="thumbnail">
     <% if @product.photos.any? %>
+<<<<<<< Updated upstream
       <%= cl_image_tag product.photos.first.path, height: 200 %>
+=======
+    <%= cl_image_tag @product.photos.first.path, height: 200 %>
+>>>>>>> Stashed changes
     <% end %>
 
     <div class="caption">
@@ -18,22 +22,22 @@
          <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
          <%= f.hidden_field :liked %>
          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-             <i class="fa fa-frown-o fa-3x"></i>
-           <% end %>
+         <i class="fa fa-frown-o fa-3x"></i>
+         <% end %>
          <% end %>
        </div>
 
-         <div class="col-xs-6">
-           <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-           <%= f.hidden_field :liked %>
-          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-              <i class="fa fa-smile-o fa-3x"></i>
-            <% end %>
-           <% end %>
-         </div>
-      </div>
-    </div>
-  </div>
+       <div class="col-xs-6">
+         <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+         <%= f.hidden_field :liked %>
+         <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+         <i class="fa fa-smile-o fa-3x"></i>
+         <% end %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
 
 </div>
 </div>
@@ -42,39 +46,39 @@
 
 <!-- Mike's work product description -->
 <div class="carousel-container">
-<div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @product.photos.each_with_index do |photo, index| %>
-    <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
-    <%end  %>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <% @product.photos.each_with_index do |photo, index| %>
-    <%if index == 0 %>
-    <div class="item active">
-      <%else  %>
-      <div class="item">
-        <%end  %>
-        <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <div class="carousel-caption">
-        </div>
-      </div>
+  <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% @product.photos.each_with_index do |photo, index| %>
+      <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
       <%end  %>
-    </div>
+    </ol>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <% @product.photos.each_with_index do |photo, index| %>
+      <%if index == 0 %>
+      <div class="item active">
+        <%else  %>
+        <div class="item">
+          <%end  %>
+          <%= cl_image_tag photo.path, width: 300, height: 300, crop: :fill %>
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <%end  %>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
   </div>
 
   <div class="product-container">
@@ -84,15 +88,23 @@
     <div class="product-description">
       <%=@product.description %>
     </div>
-    <div class="user-extra-info">
-      <%=@user.first_name %>
-      <%=@user.last_name %>
-      <%= cl_image_tag @user.picture, class:"avatar" %>
+    <div class="extra-info">
+      <div class="user-photo">
+        <%= cl_image_tag @user.picture, class:"avatar" %>
+        <div class="user-extra-info">
+          <p>
+            <%=@user.first_name %>
+            <%=@user.last_name %>
+          </p>
+        </div>
       <div class="friends_count">
-<p>Facebook friends : <%=@user.friends_count  %> </p>
-
+        <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
+      </div>
+      <div class="successfull_trade">
+     <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+      </div>
       </div>
     </div>
-  </div>
+
 
 
