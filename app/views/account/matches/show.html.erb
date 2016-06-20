@@ -1,3 +1,32 @@
+
+
+<div class="matches-container">
+  <div class="matches">
+    <%= image_tag "anchor.jpg", class:"matches-image-circle" %>
+    <div class='matches-body'>
+      <h3>Beautiful Anchor</h3>
+      <div class="inline-block">
+        <i class="fa fa-exchange" aria-hidden="true"></i>
+        <p>My shirt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+First create some more users and products and then fix the matches.
+
+I suppose to access the name (@names) in the controller first?
+
+For the product name access:
+match > appreciation > product.name
+
+For the picture access:
+match > appreciation > product > media.picture
+
+For the product name of owner (My shirt) access:
+match > appreciation > product.name where
+
+
 <div class="matches-container">
   <div class="matches">
     <%= image_tag "anchor.jpg", class:"matches-image-circle" %>
