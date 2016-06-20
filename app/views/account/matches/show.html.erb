@@ -1,11 +1,26 @@
 <h1>Account::Matches#show</h1>
 <p>Find me in app/views/account/matches/show.html.erb</p>
 
-
-
 <div class="matches-container">
-  <img src="/images/rubber_duck.jpg" alt="Rubber Duck" class="avatar-large">
-  <h4 class="text-center">Name of the product</h4>
-
+  <div class="matches">
+    <%= image_tag "anchor.jpg", class:"matches-image-circle" %>
+    <div class='matches-body'>
+      <h3>Beautiful Anchor</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+  <div class="matches">
+    <%= image_tag "rubber_duck.jpg", class:"matches-image-circle" %>
+    <div class='matches-body'>
+      <h3>Rubber Duck</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+  <div class="matches">
+  <%= image_tag "sunglasses.jpg", class:"matches-image-circle" %>
+    <div class='matches-body'>
+      <h3>Persol Sunglasses</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
 </div>
-
