@@ -15,7 +15,8 @@ class Account::ProductsController < ApplicationController
 
     if @product.save
       flash[:success] = "Succesfully added your product"
-      redirect_to account_products_path(@products)
+      # redirect_to account_products_path(@products)
+      redirect_to product_path(Product.all.sample)
     else
       render :new
     end
@@ -39,7 +40,12 @@ class Account::ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:name, :description, photos: [])
+      params.require(:product).permit(
+        :name,
+        :description,
+        :value,
+        photos: []
+      )
     end
 
   # def set_account

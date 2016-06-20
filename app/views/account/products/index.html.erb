@@ -1,23 +1,49 @@
 <div class="wrapper">
   <div class="container-fluid text-center">
-    <div class="row">
-        <% @products.each do |product| %>
-      <div class="col-xs-12 col-md-4 col-sm-6">
-          <% if product.photos.any? %>
-            <%= link_to account_product_path(product) do%>
-              <%= cl_image_tag product.photos.first.path, width: 300, height: 200, crop: :fill %>
-            <%end%>
-          <%end%>
-      </div>
-         <%end%>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-          <h1>Products</h1>
-          <p>Discover what cool goods you can achieve with your item. To start trading, upload your product below.</p>
-          <i class="fa fa-exchange big" aria-hidden="true"></i>
-          <div><%= link_to "Add a product", new_account_product_path, {class: "btn btn-primary"} %>
+    <div class="row products-index">
+      <% @single_item = "col-sm-offset-4" if @products.count == 0 %>
+      <% @products.each do |product| %>
+      <div class="col-xs-12 col-md-4 col-sm-6  single-product">
+        <% if product.photos.any? %>
+        <%= link_to account_product_path(product) do%>
+        <div class="product-card">
+          <div class="product-card-image">
+            <%= cl_image_tag product.photos.first.path,height: 200 %>
           </div>
+          <div class="product-card-content">
+            <div class="product-title">
+              <%= product.name %>
+            </div>
+            <div class="product-description">
+              <%= product.description %>
+            </div>
+          </div>
+          <div class="product-card-extra">
+            <%= product.value %>
+          </div>
+          <%end%>
+          <%end%>
+        </div>
+      </div>
+      <%end%>
+
+      <div class="col-xs-12 col-md-4 col-sm-6 <%= @single_item %>">
+       <%= link_to new_account_product_path do%>
+       <div class="add-product">
+       <div class="add-product-image">
+        <i class="fa fa-exchange big" aria-hidden="true"></i>
+       </div>
+       <div class="add-product-content">
+          <div class="add-product-title">Products</div>
+          <div class="add-product-description">
+            <p>Discover what cool goods you can achieve with your item. To start trading, upload a product.</p>
+          </div>
+          <div class="add-product-card-extra">
+            <div class="btn btn-primary button-center"> Add a product
+            </div>
+          </div>
+        </div>
+        <%end%>
       </div>
     </div>
   </div>
