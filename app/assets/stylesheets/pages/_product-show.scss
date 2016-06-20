@@ -1,19 +1,124 @@
 .show-page {
-display: flex;
-align-items: center;
-justify-content:center;
-flex-direction:column;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction:column;
 }
 
-.carrousel-container{
+.carousel-container{
   width: 300px;
   margin: 0 auto;
+}
 
+.carousel-control{
+  color:$green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  widows: ; 15%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.carousel-control.right {
+  left: auto;
+  right: 0;
+  background-repeat: repeat-x;
+}
+
+.carousel-control.left {
+  right: auto;
+  left: 0;
+  background-repeat: repeat-x;
+}
+
+.carousel-control:hover{
+  color:$green;
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: $green;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid $green;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: transparent;
+}
+
+.carousel-control.left, .carousel-control.right{
+  background-image: none;
 }
 
 .product-container{
-display: flex;
-align-items: center;
-justify-content:center;
-flex-direction:column;
+  width: 300px;
+  margin: 0 auto;
 }
+
+.product-name {
+  color: $gray;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-description{
+  color: #A9A9A9;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.extra-info{
+  position: absolute;
+}
+
+.user-photo{
+  position:relative;
+  left: 10px;
+  bottom: 10px;
+}
+
+.user-extra-info{
+  position:relative;
+  left: 115px;
+  bottom: 70px;
+  font-weight: bold;
+  color: $gray;
+}
+
+.friends_count{
+  position:relative;
+  left:115px;
+  bottom: 75px;
+  color:$gray;
+}
+
+.fa-user:before {
+  content: "\f007";
+  padding-right: 10px;
+}
+.successfull_trade{
+  position:relative;
+  left:115px;
+  bottom: 75px;
+  color:$gray;
+}
+
+.fa-check-square-o:before {
+  content: "\f046";
+  margin-right: 10px;
+}
+
+
