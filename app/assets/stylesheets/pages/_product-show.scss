@@ -17,3 +17,13 @@ align-items: center;
 justify-content:center;
 flex-direction:column;
 }
+
+.smiley_options {
+  width: 68px;
+  margin: 0 auto;
+  display:flex;
+}
+
+.image-card {
+  border-bottom: 2px solid $dark-gray;
+}
