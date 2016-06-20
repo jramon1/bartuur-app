@@ -2,7 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-  scope: 'email', info_fields: 'email, first_name,last_name, friends', image_size: 'large'
+  scope: 'email', info_fields: 'email,first_name,last_name,friends', image_size: 'large'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
