@@ -6,7 +6,7 @@
 }
 
 .carousel-container{
-  width: 300px;
+  width: 350px;
   margin: 0 auto;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .product-container{
-  width: 300px;
+  width: 350px;
   margin: 0 auto;
 }
 
@@ -120,4 +120,17 @@
   margin-right: 10px;
 }
 
+#go-back{
+position:relative;
+left: 10px;
+top: 40px;
+z-index: 500;
+font-size: 30px;
+opacity:0.8;
+color:$green;
+}
 
+#go-back:hover{
+opacity:1;
+
+}
