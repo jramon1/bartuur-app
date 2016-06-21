@@ -31,7 +31,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-
+  gem 'faker'
 
 end
 
