@@ -54,6 +54,8 @@ jurjen = User.create!(
   street: "Admiraal de Ruijterweg 296-2",
   zip_code: "1055MS",
   city: "Amsterdam",
+  provider: "facebook",
+  uid: "1125025977540342",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12301502_1008253785884229_2873181151236248682_n.jpg?oh=5c45f0c66aa76dd933f4a7eba4fef69a&oe=57E44838",
   friends_count: (100..600).to_a.sample
 )
