@@ -25,12 +25,12 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                <i class="fa fa-user"></i> <%= t ".picture", default: "Profile" %>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+                <i class="fa fa-home"></i>  <%= t ".picture", default: "Home" %>
               <% end %>
             </li>
             <li>
@@ -43,9 +43,6 @@
       </div>
 
     <% else %>
-
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
