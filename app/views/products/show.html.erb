@@ -1,8 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="show-page">
-  <div class="thumbnail"  >
-  <div type="button" id="product-description" >
-    <%link_to "test" %>
+  <div class="thumbnail" id="product-description">
+  <div id="product-photo" type="button" >
     <% if @product.photos.any? %>
     <%= cl_image_tag @product.photos.first.path, width: 350, height: 350 %>
     <% end %>
@@ -91,7 +90,7 @@
         <div class="user-extra-info">
           <p>
             <%=@user.first_name %>
-            <%=@user.last_name %>
+            <%=@user.last_name%>
           </p>
         </div>
         <div class="friends_count">
