@@ -1,11 +1,12 @@
-
+<%= render 'shared/navbar' %>
 <div class="show-page">
-  <div class="thumbnail" type="button" id="product-description" >
+  <div class="thumbnail"  >
+  <div type="button" id="product-description" >
     <%link_to "test" %>
     <% if @product.photos.any? %>
     <%= cl_image_tag @product.photos.first.path, width: 350, height: 350 %>
     <% end %>
-
+    </div>
     <div class="caption">
       <h3><%= @product.name %></h3>
       <p><%= @product.description %></p>
