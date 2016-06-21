@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="container-fluid text-center">
     <div class="row">
-      <h1>Profile</h1>
         <div class="user-profile">
           <div class="user-picture">
             <%= cl_image_tag current_user.picture, class:"img-circle" %>
@@ -11,6 +10,14 @@
             <%= current_user.last_name %>
           </div>
         </div>
+    </div>
+    <div class="profile-menu">
+      <div class="profile-box">
+        <h2> Profile </h2>
+      </div>
+      <div class="settings-box">
+        <h2> Settings </h2>
+      </div>
     </div>
     <div class="products-index products-overview">
       <% @products.each do |product| %>
@@ -43,12 +50,28 @@
           <div class="add-product-profile-content">
             <div class="add-product-profile-title">Products</div>
             <div class="add-product-profile-description">
-              <p>Discover what cool goods you can achieve with your item. To start trading, upload a product.</p>
+              <p>Add another product!</p>
             </div>
           </div>
           <%end%>
         </div>
     </div>
+    <div class="profile-settings">
+      <%= simple_form_for [:account, @current_user], url: account_profile_path(current_user) do |f| %>
+
+        <div class="form-inputs">
+          <%= f.input :street, required: true, as: "string" %>
+          <%= f.input :zip_code, required: true, as: "string" %>
+          <%= f.input :city, required: true, as: "string" %>
+
+        </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Save Profile" %>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
+  <!-- f.input :distance, required: true, as: "string", collection: [5, 10, 15, 20, 25] -->
