@@ -78,8 +78,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
-    faker (1.6.3)
-      i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
@@ -230,7 +228,6 @@ DEPENDENCIES
   cloudinary
   coffee-rails
   devise
-  faker
   figaro
   font-awesome-rails
   font-awesome-sass
