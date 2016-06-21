@@ -1,9 +1,11 @@
 <%= render 'shared/navbar' %>
 <div class="show-page">
-  <div class="thumbnail" id="product-description">
-  <div id="product-photo" type="button" >
+
+  <h1>Products</h1>
+
+  <div class="thumbnail">
     <% if @product.photos.any? %>
-    <%= cl_image_tag @product.photos.first.path, width: 350, height: 350 %>
+      <%= cl_image_tag( @product.photos.first.path, size: '350', class: "image-card") %>
     <% end %>
     </div>
     <div class="caption">
@@ -16,23 +18,24 @@
         <div class="col-xs-6">
          <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
          <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-         <i class="fa fa-frown-o fa-3x"></i>
-         <% end %>
+<<<<<<< HEAD
+         <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options") do %>
+             <i class="fa fa-frown-o fa-3x"></i>
+           <% end %>
          <% end %>
        </div>
 
-       <div class="col-xs-6">
-         <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-         <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-         <i class="fa fa-smile-o fa-3x"></i>
-         <% end %>
-         <% end %>
-       </div>
-     </div>
-   </div>
- </div>
+         <div class="col-xs-6">
+           <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+           <%= f.hidden_field :liked %>
+          <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options") do %>
+              <i class="fa fa-smile-o fa-3x"></i>
+            <% end %>
+           <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 </div>
