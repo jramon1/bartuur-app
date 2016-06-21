@@ -17,8 +17,8 @@
 
     resources :products
 
-    resource :matches, only: [:index, :show] do
-      resource :messages, only: [:show, :create, :new]
+    resources :matches, only: [:index, :show] do
+      resources :messages, only: [:show, :create, :new]
     end
   end
 end

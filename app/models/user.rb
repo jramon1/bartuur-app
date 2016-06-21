@@ -22,4 +22,11 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
   end
+
+  def matches
+    Match.joins(:appreciation, :secondary_appreciation).where(
+      "appreciations.user_id = :id OR secondary_appreciations_matches.user_id = :id",
+      id: id
+    )
+  end
 end
