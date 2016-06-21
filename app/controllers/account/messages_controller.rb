@@ -37,3 +37,5 @@ def update_read_status
   @messages.last.read = true if @messages.last.user_id != current_user.id
 end
 end
+
+

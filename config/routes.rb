@@ -18,7 +18,13 @@
     resources :products
 
     resource :matches, only: [:index, :show] do
-      resource :messages, only: [:show, :create, :new]
+      member do
+        get 'conversation', to:'conversations#show'
+      end
+      resources :conversations, only: [:show] do
+        resource :messages, only: [:show, :create, :new]
+      end
     end
   end
 end
+
