@@ -169,7 +169,7 @@ iphone = Product.new(
   user: jurjen
 )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/bike.jpg"))
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/iphone.jpg"))
 
 iphone.photos << Attachinary::File.new({
   version:               photo["version"],
