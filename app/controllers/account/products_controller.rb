@@ -15,8 +15,7 @@ class Account::ProductsController < ApplicationController
 
     if @product.save
       flash[:success] = "Succesfully added your product"
-      # redirect_to account_products_path(@products)
-      redirect_to product_path(Product.all.sample)
+      redirect_to_next_product
     else
       render :new
     end

@@ -1,10 +1,10 @@
 class Account::MessagesController < ApplicationController
-  before_action :set_conversation
+  before_action :set_conversation, only:[:show]
 
   def index
-    @messages = @conversation.messages.all
+    @messages = @matches.messages.all
     update_read_status unless @messages.empty?
-    @message = @conversation.messages.new
+    @message = @match.message.new
     @user = current_user
   end
 
@@ -13,11 +13,10 @@ class Account::MessagesController < ApplicationController
   end
 
   def create
-    @message.conversation_id = @conversation.id
+    @message.match_id = @match.id
     @message.user_id = current_user.id
     if @message.save!
-      redirect_to conversation_messages_path(@conversation)
-
+      redirect_to account_match_message_path(@match)
     end
   end
 
@@ -27,16 +26,14 @@ class Account::MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:body, :user_id)
+    params.require(:message).permit(:content, :user_id)
   end
 
   def set_conversation
-    @conversation = Conversation.find(params[:conversation_id])
+    @conversation = Match.find(params[:match_id])
   end
 
   def update_read_status
     @messages.last.read = true if @messages.last.user_id != current_user.id
   end
 end
-
-
