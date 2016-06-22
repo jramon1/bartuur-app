@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       if current_user.products.empty?
         redirect_to account_products_path
       else
-        redirect_to product_path(Product.all.sample)
+        redirect_to_next_product
       end
     end
   end

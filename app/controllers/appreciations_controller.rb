@@ -20,12 +20,15 @@ class AppreciationsController < ApplicationController
       flash[:alert] = 'Oops, an error just occured!'
     end
 
-    redirect_to product_path(Product.all.sample)
+    redirect_to_next_product
   end
 
   private
 
   def check_for_a_matching
+    # do not try to make a Match if user disliked the product
+    return if @appreciation.liked == false
+
     appreciated_product = @appreciation.product
     other_user_appreciations = appreciated_product.user.appreciations
 
