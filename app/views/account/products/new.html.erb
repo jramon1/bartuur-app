@@ -1,23 +1,10 @@
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <h1>Create Product</h1>
       <p>Hello, gogogo create your first product</p>
 
-      <%=  simple_form_for [:account, @product] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :photos, as: :attachinary %>
-        <%= f.input :name %>
-        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10} %>
-        <%= f.input :value, as: :integer %>
-      </div>
-
-        <div class="form-actions">
-          <%= f.submit %>
-        </div>
-
-      <% end %>
+     <%= render 'form', product: @product %>
     </div>
   </div>
 </div>
