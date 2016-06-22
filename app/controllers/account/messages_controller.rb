@@ -38,3 +38,5 @@ class Account::MessagesController < ApplicationController
     @messages.last.read = true if @messages.last.user_id != current_user.id
   end
 end
+
+
