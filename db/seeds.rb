@@ -1,13 +1,14 @@
 
 puts "Cleaning up database..."
 
+Match.destroy_all
 User.destroy_all
 Product.destroy_all
 
 puts "Creating users..."
 
 jesse = User.create!(
-  email: "jesse@ramon.com",
+  email: "jramon@uvic.ca",
   password: "12345678",
   password_confirmation: "12345678",
   first_name: "Jesse",
@@ -15,6 +16,8 @@ jesse = User.create!(
   street: "Nassaukade 307",
   zip_code: "1053LP",
   city: "Amsterdam",
+  provider: "facebook",
+  uid: "1191239214222307",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/13133237_1164443516901877_3662997524109057160_n.jpg?oh=33ff947dc09e1129091369ba96885d0d&oe=57DD8215",
   friends_count: (100..600).to_a.sample
 )
@@ -236,3 +239,4 @@ guitar.photos << Attachinary::File.new({
 })
 
 guitar.save!
+
