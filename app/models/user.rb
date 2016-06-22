@@ -17,9 +17,16 @@ class User < ActiveRecord::Base
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.picture = auth.info.image
-      user.friends_count = auth.extra.raw_info.friends.summary.total_count
+     # user.friends_count = auth.extra.raw_info.friends.summary.total_count
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  def matches
+    Match.joins(:appreciation, :secondary_appreciation).where(
+      "appreciations.user_id = :id OR secondary_appreciations_matches.user_id = :id",
+      id: id
+    )
   end
 end
