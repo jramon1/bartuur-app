@@ -1,8 +1,10 @@
 
+
+
 <div class="navbar-wagon">
   <!-- icon on the left side -->
-  <%= link_to "#", class: "navbar-wagon-gray" do %>
-    <i class="fa fa-arrow-left"></i>
+  <%= link_to account_matches_path, class: "navbar-wagon-gray" do %>
+    <i class="fa fa-arrow-left icon-big"></i>
     <% end %>
 
   <div>
@@ -20,10 +22,10 @@
 
   <div class="navbar-wagon-right">
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-    <div class="avatar-square">
-      <img src="#">
-    </div>
+    <%= cl_image_tag @other_product.photos.first.path, class:"avatar-square" %>
     <% end %>
-
   </div>
+
 </div>
+</div>
+

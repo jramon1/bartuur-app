@@ -1,3 +1,5 @@
+<%= render 'shared/navbars/arrow_chat' %>
+
 <div class="matches-container">
   <% @matches.each do |match| %>
     <%= render 'match', match: match, product: match_product(match), other_product: match_other_product(match) %>
@@ -36,14 +38,4 @@
     </div>
   </div>
   <hr>
-  <div class="matches">
-    <%= image_tag "rubber_duck.jpg", class:"matches-image-circle" %>
-    <div class='matches-body'>
-      <h3>Rubber Duck</h3>
-      <div class="inline-block">
-        <i class="fa fa-exchange" aria-hidden="true"></i>
-        <p>My shirt</p>
-      </div>
-    </div>
-  </div>
 </div>

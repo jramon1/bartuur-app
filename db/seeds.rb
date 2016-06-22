@@ -1,6 +1,7 @@
 
 puts "Cleaning up database..."
 
+Match.destroy_all
 User.destroy_all
 Product.destroy_all
 
@@ -236,3 +237,4 @@ guitar.photos << Attachinary::File.new({
 })
 
 guitar.save!
+
