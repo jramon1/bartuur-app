@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :products
 
     resources :matches, only: [:index, :show] do
-      resources :messages, only: [:show, :create, :new]
+      resources :messages, only: [:create]
     end
   end
 end
