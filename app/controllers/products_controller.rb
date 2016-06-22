@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
 
   before_action :find_product, only: [:show]
 
+  def deckend
+  end
+
   def show
     @user = @product.user
 
