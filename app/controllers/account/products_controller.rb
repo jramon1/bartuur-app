@@ -23,6 +23,7 @@ class Account::ProductsController < ApplicationController
   end
 
   def edit
+    @product = current_user.products.find(params[:id])
   end
 
   def show
@@ -33,7 +34,7 @@ class Account::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = current_user.products.find[:id]
+    @product = current_user.products.find(params[:id])
     @product.destroy
   end
 

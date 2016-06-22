@@ -23,7 +23,7 @@
       <% @products.each do |product| %>
         <% if product.photos.any? %>
           <div class="product-card">
-          <%= link_to account_product_path(product), class: "product-flex" do%>
+          <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, widht: 350, height: 350  %>
             </div>
