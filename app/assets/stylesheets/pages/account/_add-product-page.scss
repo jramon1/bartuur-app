@@ -1,8 +1,9 @@
 /* Add product styling */
 
-.big {
-  font-size: 200px;
-  padding-bottom: 25px;
+.arrows-big {
+  font-size: 105px;
+  padding: 20px 0px 38px 0px;
+  color: $gray;
 }
 
 .center-add-product {
@@ -12,4 +13,12 @@
 
 .products-index {
   margin: 25px;
+}
+
+.container-fluid h2 {
+  padding: 70px 0px 0px 0px;
+}
+
+.add-product-description {
+  margin: 0px 25px 45px 25px;
 }
