@@ -3,7 +3,7 @@
 <div class="show-page" id="product-description">
   <div class="thumbnail">
     <% if @product.photos.any? %>
-      <%= cl_image_tag( @product.photos.first.path, size: '350', class: "image-card", id: "product-photo") %>
+      <%= cl_image_tag( @product.photos.first.path, class: "product_image", id: "product-photo") %>
     <% end %>
     </div>
     <div class="caption">
@@ -59,7 +59,7 @@
         <%else  %>
         <div class="item">
           <%end  %>
-          <%= cl_image_tag photo.path, width: 350, height: 350, crop: "crop" %>
+          <%= cl_image_tag photo.path, class: "product_image" %>
           <div class="carousel-caption">
           </div>
         </div>
