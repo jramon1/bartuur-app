@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
+  :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_many :products, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.picture = auth.info.image
-     # user.friends_count = auth.extra.raw_info.friends.summary.total_count
+      user.friends_count = auth.extra.raw_info.friends.summary.total_count
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
     Match.joins(:appreciation, :secondary_appreciation).where(
       "appreciations.user_id = :id OR secondary_appreciations_matches.user_id = :id",
       id: id
-    )
+      )
   end
 end
