@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
+  :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_many :products, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
     Match.joins(:appreciation, :secondary_appreciation).where(
       "appreciations.user_id = :id OR secondary_appreciations_matches.user_id = :id",
       id: id
-    )
+      )
   end
 end
