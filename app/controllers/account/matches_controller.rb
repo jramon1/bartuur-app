@@ -4,6 +4,7 @@ class Account::MatchesController < ApplicationController
   end
 
   def show
+    @message = Message.new
     @match = current_user.matches.find(params[:id])
     appreciation = @match.appreciation
     secondary_appreciation = @match.secondary_appreciation
