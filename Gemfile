@@ -23,6 +23,7 @@ gem "coffee-rails"
 gem 'omniauth-facebook'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
+gem 'compass-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
