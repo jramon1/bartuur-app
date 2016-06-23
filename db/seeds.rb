@@ -5,6 +5,12 @@ Match.destroy_all
 User.destroy_all
 Product.destroy_all
 
+##################################################
+#
+# USERS
+#
+##################################################
+
 puts "Creating users..."
 
 jesse = User.create!(
@@ -63,9 +69,15 @@ jurjen = User.create!(
   friends_count: (100..600).to_a.sample
 )
 
+##################################################
+#
+# PRODUCTS
+#
+##################################################
+
 puts "Creating products..."
 
-# Jesse's Sunglasses
+# Jesse -- Sunglasses
 
 sunglasses = Product.new(
   name: "Sunglasses",
@@ -90,7 +102,8 @@ sunglasses.photos << Attachinary::File.new({
 
 sunglasses.save!
 
-# Jesse's Rubber Duck
+
+# Jesse -- Rubber Duck
 
 rubber_duck = Product.new(
   name: "Rubber Duck",
@@ -115,7 +128,8 @@ rubber_duck.photos << Attachinary::File.new({
 
 rubber_duck.save!
 
-# Mike's Jacket
+
+# Mike -- Jacket
 
 jacket = Product.new(
   name: "Armani Jacket",
@@ -140,12 +154,13 @@ jacket.photos << Attachinary::File.new({
 
 jacket.save!
 
-# Jurjen's Bike
+
+# Jurjen -- Bike
 
 bike = Product.new(
   name: "Bike",
   description: "Old 90's quality. Always protected against the weather in my little barn.",
-  value: 4,
+  value: 3,
   user: jurjen
 )
 
@@ -165,7 +180,8 @@ bike.photos << Attachinary::File.new({
 
 bike.save!
 
-# Jurjen's iPhone
+
+# Jurjen -- iPhone
 
 iphone = Product.new(
   name: "iPhone 5",
@@ -190,7 +206,8 @@ iphone.photos << Attachinary::File.new({
 
 iphone.save!
 
-# Jurjen's closet
+
+# Jurjen -- closet
 
 closet = Product.new(
   name: "Vintage closet",
@@ -215,7 +232,8 @@ closet.photos << Attachinary::File.new({
 
 closet.save!
 
-# Jurjen's guitar
+
+# Jurjen -- guitar
 
 guitar = Product.new(
   name: "Acoustic guitar",
@@ -240,3 +258,34 @@ guitar.photos << Attachinary::File.new({
 
 guitar.save!
 
+##################################################
+#
+# MATCHES
+#
+##################################################
+
+puts "Creating Matches..."
+
+# Jesse -- likes jurjen bike
+
+appreciation1 = Appreciation.create!(
+  liked: true,
+  product: bike,
+  user: jesse
+)
+
+# Jurjen -- likes jesse sunglasses
+
+appreciation2 = Appreciation.create!(
+  liked: true,
+  product: sunglasses,
+  user: jurjen
+)
+
+# Matching
+
+Match.create!(
+  appreciation: appreciation1,
+  secondary_appreciation: appreciation2,
+  code: SecureRandom.hex(3).upcase
+)
