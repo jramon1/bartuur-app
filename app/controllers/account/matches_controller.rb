@@ -7,6 +7,7 @@ class Account::MatchesController < ApplicationController
     @match = current_user.matches.find(params[:id])
     appreciation = @match.appreciation
     secondary_appreciation = @match.secondary_appreciation
+    @other_user = @match.appreciation.user
 
     # if I created the appreciation, then I liked the product of the other one
     # so my product is in the secondary appreciation
