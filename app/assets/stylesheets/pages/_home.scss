@@ -2,17 +2,34 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-.home-page{
+
+ .home-page{
   display: flex;
   align-items: center;
   justify-content:center;
   flex-direction:column;
 }
 
-.logo {
-  font-family: $header-font;
-  font-size: 120px;
-  color: $green;
+h2.company-name {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  text-align:center;
+  color:$dark-gray;
+  font-family:$base-font;
+}
+
+h3{
+color:$dark-gray;
+font-family:$base-font;
+}
+
+.logo{
+  font-family:$header-font;
+  color:$green;
+  font-size: 160px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -40px;
 }
 
 .logo-small {
@@ -27,9 +44,10 @@
 
 p.logging{
   margin: 20px 32px 0px 0px;
+  font-size:10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-family:$base-font;
 }
 
-h2.company-name{
-  padding-top: 10px;
-  padding-bottom:10px;
-}
+

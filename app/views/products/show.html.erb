@@ -3,9 +3,8 @@
 <div class="show-page" id="product-description">
   <div class="thumbnail">
     <% if @product.photos.any? %>
-      <%= cl_image_tag( @product.photos.first.path, size: '350', class: "image-card", id: "product-photo") %>
+    <%= cl_image_tag( @product.photos.first.path, width: 350, height: 350, crop: :fill, class: "image-card", id: "product-photo") %>
     <% end %>
-    </div>
     <div class="caption">
       <h3><%= @product.name %></h3>
       <p><%= @product.description %></p>
@@ -17,32 +16,30 @@
          <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
          <%= f.hidden_field :liked %>
          <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options") do %>
-             <i class="fa fa-frown-o fa-3x"></i>
-           <% end %>
+         <i class="fa fa-frown-o fa-3x"></i>
+         <% end %>
          <% end %>
        </div>
 
-         <div class="col-xs-6">
-           <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-           <%= f.hidden_field :liked %>
-          <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options") do %>
-              <i class="fa fa-smile-o fa-3x"></i>
-            <% end %>
-           <% end %>
-         </div>
-      </div>
-    </div>
-  </div>
-
-</div>
+       <div class="col-xs-6">
+         <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+         <%= f.hidden_field :liked %>
+         <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options") do %>
+         <i class="fa fa-smile-o fa-3x"></i>
+         <% end %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 
 
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">
-<div id="go-back">
-<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-</div>
+  <div id="go-back">
+    <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+  </div>
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -59,7 +56,7 @@
         <%else  %>
         <div class="item">
           <%end  %>
-          <%= cl_image_tag photo.path, width: 350, height: 350, crop: "crop" %>
+          <%= cl_image_tag photo.path, width: 350, height: 350, crop: :fill %>
           <div class="carousel-caption">
           </div>
         </div>
@@ -77,33 +74,33 @@
       </a>
     </div>
 
-  <div class="product-container">
-    <div class="product-name">
-      <%=@product.name %>
-    </div>
-    <div class="product-description">
-      <%=@product.description %>
-    </div>
-    <div class="extra-info">
-      <div class="user-photo">
-        <%= cl_image_tag @user.picture, class:"avatar-large" %>
-        <div class="user-extra-info">
-          <p>
-            <%=@user.first_name %>
-            <%=@user.last_name%>
-          </p>
-        </div>
-        <div class="friends_count">
-          <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
-        </div>
-        <div class="successfull_trade">
-         <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+    <div class="product-container">
+      <div class="product-name">
+        <%=@product.name %>
+      </div>
+      <div class="product-description">
+        <%=@product.description %>
+      </div>
+      <div class="extra-info">
+        <div class="user-photo">
+          <%= cl_image_tag @user.picture, class:"avatar-large" %>
+          <div class="user-extra-info">
+            <p>
+              <%=@user.first_name %>
+              <%=@user.last_name%>
+            </p>
+          </div>
+          <div class="friends_count">
+            <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
+          </div>
+          <div class="successfull_trade">
+           <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+         </div>
        </div>
      </div>
    </div>
  </div>
 </div>
-  </div>
 
 
 
