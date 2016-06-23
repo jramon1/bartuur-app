@@ -7,12 +7,10 @@
   <div>
     <ul class="list-inline">
       <li>
-        <div class="avatar">
-          <img src="#">
-        </div>
+        <%= cl_image_tag @other_user.picture, class: "avatar" %>
       </li>
       <li>
-        <h3>Sophie</h3>
+        <h4><%= @other_user.first_name %> <%= @other_user.last_name %></h4>
       </li>
     </ul>
   </div>
@@ -24,4 +22,3 @@
   </div>
 </div>
 </div>
-
