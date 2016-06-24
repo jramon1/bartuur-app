@@ -304,7 +304,7 @@ appreciation3 = Appreciation.create!(
 
 appreciation4 = Appreciation.create!(
   liked: true,
-  product: sunglasses,
+  product: bike,
   user: mike
 )
 
