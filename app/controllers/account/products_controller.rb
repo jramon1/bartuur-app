@@ -30,6 +30,9 @@ class Account::ProductsController < ApplicationController
   end
 
   def update
+    @product = current_user.products.find(params[:id])
+    @product.update(product_params)
+    redirect_to account_profile_path
   end
 
   def destroy
