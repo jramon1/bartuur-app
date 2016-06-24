@@ -1,5 +1,5 @@
 .body{
-font-family: $base-font;
+  font-family: $base-font;
 }
 .show-page {
   display: flex;
@@ -136,21 +136,17 @@ font-family: $base-font;
   cursor: pointer;
 }
 
-  #go-back:hover{
-    opacity:1;
+#go-back:hover{
+  opacity:1;
 
-  }
+}
 
-  .smiley_options {
-    width: 68px;
-    margin: 0 auto;
-    display:flex;
-  }
+.smiley_options {
+  width: 68px;
+  margin: 0 auto;
+  display:flex;
+}
 
 .product_image{
-width: 350px;
-height: 350px;
-  border-bottom: 2px solid $dark-gray;
-    height:350px;
-  width:350px;
+  border-bottom: 2px solid $gray;
 }
