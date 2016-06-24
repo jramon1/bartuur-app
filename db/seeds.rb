@@ -29,7 +29,7 @@ jesse = User.create!(
 )
 
 mike = User.create!(
-  email: "mike@hanot.com",
+  email: "mikehanot@gmail.com",
   password: "12345678",
   password_confirmation: "12345678",
   first_name: "Michael",
@@ -37,6 +37,8 @@ mike = User.create!(
   street: "Nassaukade 307",
   zip_code: "1053LP",
   city: "Amsterdam",
+  provider: "facebook",
+  uid: "10153717178497602",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12794386_10153463337262602_6946293271583260974_n.jpg?oh=110e79e196e1b7c6bf656aa4360f6eb3&oe=57D3D1D3",
   friends_count: (100..600).to_a.sample
 )
