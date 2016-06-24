@@ -1,70 +1,70 @@
 <%= render 'shared/navbars/profile_arrows' %>
 
-<div class="wrapper">
+<div class="wrapper grey-background">
   <div class="container-fluid text-center">
-    <div class="row">
-        <div class="user-profile">
-          <div class="user-picture">
-            <%= cl_image_tag current_user.picture, class:"img-circle" %>
-          </div>
-          <div class="user-info">
-            <%= current_user.first_name %>
-            <%= current_user.last_name %>
-          </div>
+    <div class="row profile-row">
+      <div class="user-profile">
+        <div class="user-picture">
+          <%= cl_image_tag current_user.picture, width: 150, height: 150, class:"img-circle" %>
         </div>
-    </div>
-    <div class="profile-menu">
-      <div class="profile-box">
-        <h2> Profile </h2>
+        <div class="user-info">
+          <%= current_user.first_name %>
+          <%= current_user.last_name %>
+        </div>
       </div>
-      <div class="settings-box">
-        <h2> Settings </h2>
+
+      <div class="profile-menu">
+        <div class="boxes profile-box">
+          <h2> Profile </h2>
+        </div>
+        <div class="boxes settings-box">
+          <h2> Settings </h2>
+        </div>
+        <div class="boxes logout-box">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <h2> Log out </h2>
+          <% end %>
+        </div>
       </div>
-      <div class="logout-box">
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <h2> Log out </h2>
-        <% end %>
-      </div>
-    </div>
-    <div class="products-index products-overview">
-      <% @products.each do |product| %>
-        <% if product.photos.any? %>
-          <div class="product-card">
-          <%= link_to edit_account_product_path(product), class: "product-flex" do%>
-            <div class="product-card-image">
-              <%= cl_image_tag product.photos.first.path, widht: 350, height: 350  %>
+      <div class="products-index products-overview">
+        <div class="boxes add-product-profile">
+          <%= link_to new_account_product_path do%>
+          <div class="add-product-profile-content">
+
+            <div class="add-product-profile-description">
+              <p>Add a product!</p>
             </div>
-            <div class="product-card-content">
-              <div class="product-title">
-                <%= product.name %>
-              </div>
-              <div class="product-description">
-                <%= product.description %>
-              </div>
-            </div>
-            <div class="product-card-extra">
-              <%= product.value %>
-            </div>
-            <%end%>
-            <%end%>
           </div>
-        <%end%>
-        <div class="product-card add-product-profile">
-        <%= link_to new_account_product_path do%>
           <div class="add-product-profile-image">
             <i class="fa fa-plus big-green" aria-hidden="true"></i>
           </div>
-          <div class="add-product-profile-content">
-            <div class="add-product-profile-title">Products</div>
-            <div class="add-product-profile-description">
-              <p>Add another product!</p>
-            </div>
-          </div>
           <%end%>
         </div>
-    </div>
-    <div class="profile-settings">
-      <%= simple_form_for [:account, @current_user], url: account_profile_path(current_user) do |f| %>
+        <% @products.each do |product| %>
+        <% if product.photos.any? %>
+        <div class="product-card">
+          <%= link_to edit_account_product_path(product), class: "product-flex" do%>
+          <div class="product-card-image">
+            <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
+          </div>
+          <div class="product-card-content">
+            <div class="product-title">
+              <%= product.name %>
+            </div>
+            <div class="product-description">
+              <%= product.description %>
+            </div>
+          </div>
+          <div class="product-card-extra">
+            <%= product.value %>
+          </div>
+          <%end%>
+          <%end%>
+        </div>
+        <%end%>
+      </div>
+      <div class="profile-settings">
+        <%= simple_form_for [:account, @current_user], url: account_profile_path(current_user) do |f| %>
 
         <div class="form-inputs">
           <%= f.input :street, required: true, as: "string" %>
@@ -73,12 +73,13 @@
 
         </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Save Profile" %>
-          </div>
-      <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Save Profile" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-  <!-- f.input :distance, required: true, as: "string", collection: [5, 10, 15, 20, 25] -->
+<!-- f.input :distance, required: true, as: "string", collection: [5, 10, 15, 20, 25] -->

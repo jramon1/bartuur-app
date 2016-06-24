@@ -1,1 +1,23 @@
 // Your footer style
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.smiley-footer {
+  background-color: white;
+  border: none;
+  color: $gray;
+}
+
+.icon-footer {
+  font-size: 42px;
+}
