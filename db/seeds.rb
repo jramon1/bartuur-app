@@ -296,16 +296,16 @@ Match.create!(
 
 appreciation3 = Appreciation.create!(
   liked: true,
-  product: jacket,
-  user: jesse
+  product: bike,
+  user: mike
 )
 
 # Jurjen -- likes mike jacket
 
 appreciation4 = Appreciation.create!(
   liked: true,
-  product: bike,
-  user: mike
+  product: jacket,
+  user: jurjen
 )
 
 # Matching
