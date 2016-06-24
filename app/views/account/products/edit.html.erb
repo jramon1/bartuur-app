@@ -1,12 +1,14 @@
 <%= render 'shared/navbars/profile_logo' %>
+<div class="wrapper grey-background">
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
+      <div class="add-product">
+        <h1>Update Product</h1>
+        <p>Update your product here!</p>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <h1>Update Product</h1>
-      <p>Update your product here!</p>
-
-     <%= render 'form', product: @product %>
+       <%= render 'form', product: @product %>
+      </div>
     </div>
   </div>
 </div>

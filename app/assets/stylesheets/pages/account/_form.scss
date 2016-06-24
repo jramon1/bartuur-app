@@ -1,0 +1,52 @@
+.simple_form {
+  .attachinary_container {
+    ul {
+
+      li {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+      }
+      a {
+        &:before {
+          font-family: FontAwesome;
+          content: '\f00d';
+          color: $red;
+          font-size: 35px;
+          padding-left: 15px;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.simple_form {
+  .form-inputs {
+    .form-group {
+      .form-control:focus {
+        border-color: $green;
+        box-shadow: 5px 5px 4px -5px #50C878;
+      }
+    }
+  }
+}
+
+#product_photos {
+  display: none;
+}
+
+.input-file-trigger {
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+  background-color: rgb(245, 245, 245);
+    &:before {
+      font-family: FontAwesome;
+      content: '\f067';
+      font-size: 55px;
+      color: $green;
+    }
+}

@@ -1,13 +1,14 @@
  <%=  simple_form_for [:account, product] do |f| %>
       <div class="form-inputs">
-        <%= f.input :photos, as: :attachinary %>
-        <%= f.input :name %>
-        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10} %>
-        <%= f.input :value, as: :integer %>
+        <%= f.input :photos, as: :attachinary, required: false %>
+        <%= label_tag :product_photos, "", class: "input-file-trigger", tabindex: 0 %>
+        <%= f.input :name, required: false %>
+        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10}, required: false %>
+        <%= f.input :value, as: :integer, required: false %>
       </div>
 
         <div class="form-actions">
-          <%= f.submit %>
+          <%= f.submit class: 'btn btn-primary' %>
         </div>
 
       <% end %>
