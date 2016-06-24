@@ -147,19 +147,8 @@ font-family: $base-font;
     display:flex;
   }
 
-<<<<<<< Updated upstream
-.image-card {
-  border-bottom: 2px solid $dark-gray;
-}
-
 .product_image{
 width: 350px;
 height: 350px;
+  border-bottom: 2px solid $dark-gray;
 }
-=======
-  .image-card {
-    border-bottom: 2px solid $dark-gray;
-    height:350px;
-    width:350px;
-  }
->>>>>>> Stashed changes
