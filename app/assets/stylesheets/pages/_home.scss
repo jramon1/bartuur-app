@@ -3,30 +3,26 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
- .home-page{
+ .home-page {
   display: flex;
   align-items: center;
-  justify-content:center;
-  flex-direction:column;
+  justify-content: center;
+  flex-direction: column;
 }
 
-h2.company-name {
+.company-name {
   padding-top: 10px;
-  padding-bottom: 50px;
-  text-align:center;
-  color:$dark-gray;
-  font-family:$base-font;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
-h3{
-color:$dark-gray;
-font-family:$base-font;
-margin-top: 30px;
+.home-title-margin {
+  margin-top: 30px;
 }
 
 .logo{
-  font-family:$header-font;
-  color:$green;
+  font-family: $logo-font;
+  color: $brand-color;
   font-size: 160px;
   text-align: center;
   margin-top: 20px;
@@ -34,32 +30,24 @@ margin-top: 30px;
 }
 
 .logo-small {
-  font-family: $header-font;
+  font-family: $logo-font;
   font-size: 34px;
-  color: $green;
-}
-.logo-small:hover {
-  text-decoration: none;
-  color: $green;
+  color: $brand-color;
 }
 
-p.logging{
+.logo-small:hover {
+  text-decoration: none;
+  color: $brand-color;
+}
+
+.logging {
   margin: 20px 32px 0px 0px;
   font-size:10px;
   margin-left: 30px;
   margin-bottom: 10px;
-  font-family:$base-font;
 }
 
-h2.company-name{
-  padding-top: 10px;
-  padding-bottom:10px;
+.facebook {
+  margin-bottom: 30px;
 }
 
-html, body {
-  height: 100%;
-}
-
-.facebook{
-margin-bottom: 30px;
-}
