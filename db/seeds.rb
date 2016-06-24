@@ -155,137 +155,137 @@ jacket.photos << Attachinary::File.new({
 jacket.save!
 
 
-# Jurjen -- Bike
+# # Jurjen -- Bike
 
-bike = Product.new(
-  name: "Bike",
-  description: "Old 90's quality. Always protected against the weather in my little barn.",
-  value: 3,
-  user: jurjen
-)
+# bike = Product.new(
+#   name: "Bike",
+#   description: "Old 90's quality. Always protected against the weather in my little barn.",
+#   value: 3,
+#   user: jurjen
+# )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/bike.jpg"))
+# photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/bike.jpg"))
 
-bike.photos << Attachinary::File.new({
-  version:               photo["version"],
-  public_id:             photo["public_id"],
-  resource_type:         "image",
-  attachinariable_type:  "Product",
-  scope:                 "photos",
-  width:                 photo["width"],
-  height:                photo["height"],
-  pic_name:              photo["original_filename"],
-  format:                "jpg"
-})
+# bike.photos << Attachinary::File.new({
+#   version:               photo["version"],
+#   public_id:             photo["public_id"],
+#   resource_type:         "image",
+#   attachinariable_type:  "Product",
+#   scope:                 "photos",
+#   width:                 photo["width"],
+#   height:                photo["height"],
+#   pic_name:              photo["original_filename"],
+#   format:                "jpg"
+# })
 
-bike.save!
-
-
-# Jurjen -- iPhone
-
-iphone = Product.new(
-  name: "iPhone 5",
-  description: "Some little scratches, but works perfectly!",
-  value: 5,
-  user: jurjen
-)
-
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/iphone.jpg"))
-
-iphone.photos << Attachinary::File.new({
-  version:               photo["version"],
-  public_id:             photo["public_id"],
-  resource_type:         "image",
-  attachinariable_type:  "Product",
-  scope:                 "photos",
-  width:                 photo["width"],
-  height:                photo["height"],
-  pic_name:              photo["original_filename"],
-  format:                "jpg"
-})
-
-iphone.save!
+# bike.save!
 
 
-# Jurjen -- closet
+# # Jurjen -- iPhone
 
-closet = Product.new(
-  name: "Vintage closet",
-  description: "Swedish vintage design, from the 70ties",
-  value: 5,
-  user: jurjen
-)
+# iphone = Product.new(
+#   name: "iPhone 5",
+#   description: "Some little scratches, but works perfectly!",
+#   value: 5,
+#   user: jurjen
+# )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/closet.jpg"))
+# photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/iphone.jpg"))
 
-closet.photos << Attachinary::File.new({
-  version:               photo["version"],
-  public_id:             photo["public_id"],
-  resource_type:         "image",
-  attachinariable_type:  "Product",
-  scope:                 "photos",
-  width:                 photo["width"],
-  height:                photo["height"],
-  pic_name:              photo["original_filename"],
-  format:                "jpg"
-})
+# iphone.photos << Attachinary::File.new({
+#   version:               photo["version"],
+#   public_id:             photo["public_id"],
+#   resource_type:         "image",
+#   attachinariable_type:  "Product",
+#   scope:                 "photos",
+#   width:                 photo["width"],
+#   height:                photo["height"],
+#   pic_name:              photo["original_filename"],
+#   format:                "jpg"
+# })
 
-closet.save!
+# iphone.save!
 
 
-# Jurjen -- guitar
+# # Jurjen -- closet
 
-guitar = Product.new(
-  name: "Acoustic guitar",
-  description: "A California (Aria) dreadnought. State: as good as new.",
-  value: 4,
-  user: jurjen
-)
+# closet = Product.new(
+#   name: "Vintage closet",
+#   description: "Swedish vintage design, from the 70ties",
+#   value: 5,
+#   user: jurjen
+# )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/guitar.jpg"))
+# photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/closet.jpg"))
 
-guitar.photos << Attachinary::File.new({
-  version:               photo["version"],
-  public_id:             photo["public_id"],
-  resource_type:         "image",
-  attachinariable_type:  "Product",
-  scope:                 "photos",
-  width:                 photo["width"],
-  height:                photo["height"],
-  pic_name:              photo["original_filename"],
-  format:                "jpg"
-})
+# closet.photos << Attachinary::File.new({
+#   version:               photo["version"],
+#   public_id:             photo["public_id"],
+#   resource_type:         "image",
+#   attachinariable_type:  "Product",
+#   scope:                 "photos",
+#   width:                 photo["width"],
+#   height:                photo["height"],
+#   pic_name:              photo["original_filename"],
+#   format:                "jpg"
+# })
 
-guitar.save!
+# closet.save!
 
-##################################################
-#
-# MATCHES
-#
-##################################################
 
-puts "Creating Matches..."
+# # Jurjen -- guitar
 
-# Jesse -- likes jurjen bike
+# guitar = Product.new(
+#   name: "Acoustic guitar",
+#   description: "A California (Aria) dreadnought. State: as good as new.",
+#   value: 4,
+#   user: jurjen
+# )
 
-appreciation1 = Appreciation.create!(
-  liked: true,
-  product: bike,
-  user: jesse
-)
+# photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/guitar.jpg"))
 
-# Jurjen -- likes jesse sunglasses
+# guitar.photos << Attachinary::File.new({
+#   version:               photo["version"],
+#   public_id:             photo["public_id"],
+#   resource_type:         "image",
+#   attachinariable_type:  "Product",
+#   scope:                 "photos",
+#   width:                 photo["width"],
+#   height:                photo["height"],
+#   pic_name:              photo["original_filename"],
+#   format:                "jpg"
+# })
 
-appreciation2 = Appreciation.create!(
-  liked: true,
-  product: sunglasses,
-  user: jurjen
-)
+# guitar.save!
 
-# Matching
+# ##################################################
+# #
+# # MATCHES
+# #
+# ##################################################
 
-Match.create!(
-  appreciation: appreciation1,
-  secondary_appreciation: appreciation2,
-  code: SecureRandom.hex(3).upcase
-)
+# puts "Creating Matches..."
+
+# # Jesse -- likes jurjen bike
+
+# appreciation1 = Appreciation.create!(
+#   liked: true,
+#   product: bike,
+#   user: jesse
+# )
+
+# # Jurjen -- likes jesse sunglasses
+
+# appreciation2 = Appreciation.create!(
+#   liked: true,
+#   product: sunglasses,
+#   user: jurjen
+# )
+
+# # Matching
+
+# Match.create!(
+#   appreciation: appreciation1,
+#   secondary_appreciation: appreciation2,
+#   code: SecureRandom.hex(3).upcase
+# )
