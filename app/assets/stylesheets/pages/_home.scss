@@ -21,6 +21,7 @@ h2.company-name {
 h3{
 color:$dark-gray;
 font-family:$base-font;
+margin-top: 30px;
 }
 
 .logo{
@@ -29,7 +30,7 @@ font-family:$base-font;
   font-size: 160px;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: -40px;
+  margin-bottom: -30px;
 }
 
 .logo-small {
@@ -57,4 +58,8 @@ h2.company-name{
 
 html, body {
   height: 100%;
+}
+
+.facebook{
+margin-bottom: 30px;
 }
