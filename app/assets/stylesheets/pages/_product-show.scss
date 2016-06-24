@@ -1,5 +1,5 @@
 .body{
-font-family: $base-font;
+  font-family: $base-font;
 }
 .show-page {
   display: flex;
@@ -46,6 +46,7 @@ font-family: $base-font;
   width: 12px;
   height: 12px;
   background-color: $green;
+  margin-bottom: -30px;
 }
 
 .carousel-indicators li {
@@ -75,6 +76,7 @@ font-family: $base-font;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: -30px;
 }
 
 .product-description{
@@ -131,26 +133,54 @@ font-family: $base-font;
   bottom: 275px;
   z-index: 500;
   font-size: 40px;
-  opacity: 0.8;
+  opacity: 0.7;
   color: $green;
   cursor: pointer;
 }
 
-  #go-back:hover{
-    opacity:1;
+#go-back:hover{
+  opacity:1;
 
-  }
+}
 
-  .smiley_options {
-    width: 68px;
+.smiley_options {
+  height: 60px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50px;
+  margin-top: 40px;
+  display: flex;
+  width: 60px;
+  justify-content: space-around;
+}
+
+.smiley_options_po {
+    height: 60px;
     margin: 0 auto;
-    display:flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 50px;
+    margin-top: 40px;
+    display: flex;
+    width: 60px;
+    justify-content: space-around;
   }
 
 .product_image{
-width: 350px;
-height: 350px;
-  border-bottom: 2px solid $dark-gray;
-    height:350px;
-  width:350px;
+  border-bottom: 2px solid $gray;
+}
+
+.fa-check{
+font-size:30px;
+}
+
+.fa-times{
+font-size:30px;
+}
+
+.caption{
+margin-top:-15px;
 }
