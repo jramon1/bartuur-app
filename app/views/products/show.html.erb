@@ -5,30 +5,30 @@
     <% if @product.photos.any? %>
     <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
     <% end %>
-    <div class="caption text-center">
-      <h3><%= @product.name %></h3>
-      <div container>
-       <div row>
-        <div class="col-md-offset-4 col-md-4">
-         <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
-         <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
-         <i class="fa fa-times"></i>
-         <% end %>
-         <% end %>
-       </div>
 
-       <div class="col-xs-6">
-         <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-         <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options_po") do %>
-         <i class="fa fa-check"></i>
-         <% end %>
-         <% end %>
-       </div>
-     </div>
+  <div class="caption text-center">
+    <h3><%= @product.name %></h3>
+  </div>
+  <div container>
+   <div row>
+   <div class="col-xs-6">
+     <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
+     <%= f.hidden_field :liked %>
+     <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
+     <i class="fa fa-times"></i>
+     <% end %>
+     <% end %>
+   </div>
+   <div class="col-xs-6">
+     <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+     <%= f.hidden_field :liked %>
+     <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options_po") do %>
+     <i class="fa fa-check"></i>
+     <% end %>
+     <% end %>
    </div>
  </div>
+</div>
 </div>
 </div>
 <!-- Mike's work product description -->
@@ -95,7 +95,7 @@
        </div>
      </div>
    </div>
- <%= render 'shared/footer' %>
+   <%= render 'shared/footer' %>
  </div>
 </div>
 
@@ -106,15 +106,15 @@ $(document).ready(function() {
 
 $('#carousel-container').hide(); //Initially form wil be hidden.
 
- $('#product-photo').click(function() {
-  $('#carousel-container').show();//Form shows on button click
-  $('#product-description').hide();
-  });
+$('#product-photo').click(function() {
+$('#carousel-container').show();//Form shows on button click
+$('#product-description').hide();
+});
 
- $('#go-back').click(function() {
-  $('#product-description').show();
-  $('#carousel-container').hide();
-  });
+$('#go-back').click(function() {
+$('#product-description').show();
+$('#carousel-container').hide();
+});
 });
 <%end %>
 <%end  %>
