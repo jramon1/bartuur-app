@@ -16,7 +16,7 @@
   </div>
 
   <div class="navbar-wagon-right">
-    <%= link_to show_description_products_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+    <%= link_to product_path(@other_product), class: "navbar-wagon-item navbar-wagon-link" do %>
     <%= cl_image_tag @other_product.photos.first.path, class:"avatar-square" %>
     <% end %>
   </div>
