@@ -1,7 +1,5 @@
+<%= render 'shared/navbars/profile_logo_chat' %>
 <div class="carousel-container" type="button" id="carousel-container">
-<div id="go-back">
-<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-</div>
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -18,7 +16,7 @@
         <%else  %>
         <div class="item">
           <%end  %>
-          <%= cl_image_tag photo.path, size: 350,  class: "image-card"  %>
+          <%= cl_image_tag photo.path, height:350, width:350, crop: "pad" %>
           <div class="carousel-caption">
           </div>
         </div>
@@ -36,31 +34,31 @@
       </a>
     </div>
 
-  <div class="product-container">
-    <div class="product-name">
-      <%=@product.name %>
-    </div>
-    <div class="product-description">
-      <%=@product.description %>
-    </div>
-    <div class="extra-info">
-      <div class="user-photo">
-        <%= cl_image_tag @user.picture, class:"avatar-large" %>
-        <div class="user-extra-info">
-          <p>
-            <%=@user.first_name %>
-            <%=@user.last_name%>
-          </p>
-        </div>
-        <div class="friends_count">
-          <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
-        </div>
-        <div class="successfull_trade">
-         <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+    <div class="product-container">
+      <div class="product-name">
+        <%=@product.name %>
+      </div>
+      <div class="product-description">
+        <%=@product.description %>
+      </div>
+      <div class="extra-info">
+        <div class="user-photo">
+          <%= cl_image_tag @user.picture, class:"avatar-large" %>
+          <div class="user-extra-info">
+            <p>
+              <%=@user.first_name %>
+              <%=@user.last_name%>
+            </p>
+          </div>
+          <div class="friends_count">
+            <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
+          </div>
+          <div class="successfull_trade">
+           <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+         </div>
        </div>
      </div>
    </div>
  </div>
 </div>
-  </div>
 

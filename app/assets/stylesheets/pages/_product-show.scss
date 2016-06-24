@@ -127,8 +127,8 @@
 
 #go-back{
   position:relative;
-  left: 10px;
-  top: 40px;
+  right: 150px;
+  bottom: 250px;
   z-index: 500;
   font-size: 40px;
   opacity: 0.7;
@@ -138,6 +138,7 @@
 
 #go-back:hover{
   opacity:1;
+  font-size:41px
 }
 
 .smiley_options {
@@ -180,10 +181,4 @@ font-size:30px;
 
 .caption{
 margin-top:-15px;
-}
-
-.smiley_options {
-  width: 68px;
-  margin: 0 auto;
-  display:flex;
 }
