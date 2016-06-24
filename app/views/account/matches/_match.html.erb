@@ -2,10 +2,10 @@
   <div class="matches">
     <%= cl_image_tag other_product.photos.first.path, class:"matches-image-circle" %>
     <div class='matches-body'>
-      <h3><%= other_product.name %></h3>
+      <h5 class="match-info-margin"><%= other_product.name %></h5>
       <div class="inline-block">
         <i class="fa fa-exchange" aria-hidden="true"></i>
-        <p>My <%= product.name %></p>
+        <p class="match-info-styling">My <%= product.name %></p>
       </div>
     </div>
   </div>
