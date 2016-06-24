@@ -31,9 +31,9 @@
       </div>
 
       <div class="products-index products-overview">
+        <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
         <% @products.each do |product| %>
         <% if product.photos.any? %>
-        <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
           <div class="product-card">
             <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
