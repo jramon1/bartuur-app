@@ -3,7 +3,7 @@
 
   <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
   <%= f.hidden_field :liked %>
-  <%= button_tag(type: 'submit', class: "smiley-footer green") do %>
+  <%= button_tag(type: 'submit', class: "smiley-footer red") do %>
   <i class="fa fa-times"></i>
   <% end %>
   <% end %>
@@ -12,7 +12,7 @@
 
    <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
    <%= f.hidden_field :liked %>
-   <%= button_tag(type: 'submit', class: "smiley-footer red") do %>
+   <%= button_tag(type: 'submit', class: "smiley-footer green") do %>
   <i class="fa fa-check"></i>
    <% end %>
    <% end %>
