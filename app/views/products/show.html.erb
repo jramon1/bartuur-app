@@ -9,7 +9,7 @@
       <h3><%= @product.name %></h3>
       <div container>
        <div row>
-        <div class="col-xs-6">
+        <div class="col-md-offset-4 col-md-4">
          <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
          <%= f.hidden_field :liked %>
          <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
@@ -98,4 +98,27 @@
  <%= render 'shared/footer' %>
  </div>
 </div>
+
+
+<%=content_for(:after_js) do %>
+<%= javascript_tag do%>
+$(document).ready(function() {
+
+$('#carousel-container').hide(); //Initially form wil be hidden.
+
+ $('#product-photo').click(function() {
+  $('#carousel-container').show();//Form shows on button click
+  $('#product-description').hide();
+  });
+
+ $('#go-back').click(function() {
+  $('#product-description').show();
+  $('#carousel-container').hide();
+  });
+});
+<%end %>
+<%end  %>
+
+
+
 

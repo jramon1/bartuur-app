@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     collection do
       get :deckend
     end
+    member do
+      get :show_description
+    end
 
     resource :appreciations, only: [:new, :create]
   end
@@ -25,5 +28,6 @@ Rails.application.routes.draw do
       resources :messages, only: [:create]
     end
   end
+
 end
 

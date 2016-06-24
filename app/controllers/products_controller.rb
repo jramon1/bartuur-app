@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :find_product, only: [:show]
+  before_action :find_product, only: [:show, :show_description]
 
   def deckend
   end
@@ -17,6 +17,10 @@ class ProductsController < ApplicationController
     @appreciation_negative.liked    = false
   end
 
+  def show_description
+    @user = @product.user
+
+  end
 
   private
 
