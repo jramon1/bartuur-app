@@ -5,6 +5,17 @@
   flex-direction:column;
 }
 
+.display-flexible {
+  display: flex;
+justify-items: center;
+justify-content: space-around;
+}
+
+.align-smiley {
+  margin-bottom: 20px;
+padding-right: 45px
+}
+
 .carousel-container{
   width: 350px;
   margin: 0 auto;
