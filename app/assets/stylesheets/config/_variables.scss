@@ -4,7 +4,7 @@
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Ubuntu+Condensed");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Ubuntu Condensed", "Helvetica", "sans-serif";
+$header-font: "Open Sans", "Helvetica", "sans-serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -43,6 +43,4 @@ $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 */
-h2 h3 p{
-color:$gray;
-}
+
