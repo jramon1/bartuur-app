@@ -155,9 +155,109 @@ jacket.photos << Attachinary::File.new({
 jacket.save!
 
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+# Jurjen -- Bike
+
+bike = Product.new(
+  name: "Bike",
+  description: "Old 90's quality. Always protected against the weather in my little barn.",
+  value: 3,
+  user: jurjen
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/bike.jpg"))
+
+bike.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+bike.save!
+
+
+# Jurjen -- iPhone
+
+iphone = Product.new(
+  name: "iPhone 5",
+  description: "Some little scratches, but works perfectly!",
+  value: 5,
+  user: jurjen
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/iphone.jpg"))
+
+iphone.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+iphone.save!
+
+
+# Jurjen -- closet
+
+closet = Product.new(
+  name: "Vintage closet",
+  description: "Swedish vintage design, from the 70ties",
+  value: 5,
+  user: jurjen
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/closet.jpg"))
+
+closet.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+closet.save!
+
+
+# Jurjen -- guitar
+
+guitar = Product.new(
+  name: "Acoustic guitar",
+  description: "A California (Aria) dreadnought. State: as good as new.",
+  value: 4,
+  user: jurjen
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/guitar.jpg"))
+
+guitar.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+guitar.save!
+
 ##################################################
 #
 # MATCHES
@@ -190,6 +290,7 @@ Match.create!(
   code: SecureRandom.hex(3).upcase
 )
 
+
 # Mike -- likes jurjen bike
 
 appreciation3 = Appreciation.create!(
@@ -213,4 +314,3 @@ Match.create!(
   secondary_appreciation: appreciation4,
   code: SecureRandom.hex(3).upcase
 )
-
