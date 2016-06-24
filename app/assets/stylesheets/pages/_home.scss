@@ -10,22 +10,18 @@
   flex-direction:column;
 }
 
-h2.company-name {
+.company-name {
   padding-top: 10px;
   padding-bottom: 50px;
-  text-align:center;
-  color:$dark-gray;
-  font-family:$base-font;
+  text-align: center;
 }
 
-h3{
-color:$dark-gray;
-font-family:$base-font;
-margin-top: 30px;
+.home-title-margin {
+  margin-top: 30px;
 }
 
 .logo{
-  font-family:$header-font;
+  font-family:$logo-font;
   color:$green;
   font-size: 160px;
   text-align: center;
@@ -34,7 +30,7 @@ margin-top: 30px;
 }
 
 .logo-small {
-  font-family: $header-font;
+  font-family: $logo-font;
   font-size: 34px;
   color: $green;
 }
