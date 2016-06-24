@@ -6,7 +6,7 @@ class Account::MessagesController < ApplicationController
     @message.match = @match
     @message.user = current_user
     if @message.save!
-      redirect_to account_match_path(@match)
+      redirect_to  account_match_path(@match)
     end
   end
 
