@@ -68,20 +68,21 @@
 }
 
 .product-name {
-  color: $gray;
+  color: $dark-gray;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .product-description{
-  color: #A9A9A9;
-  margin-bottom: 30px;
+  color: $gray;
+  margin-bottom: 40px;
   font-size: 20px;
 }
 
 .extra-info{
   position: absolute;
+  margin-top: 10px;
 }
 
 .user-photo{
@@ -107,7 +108,7 @@
 
 .fa-user:before {
   content: "\f007";
-  padding-right: 10px;
+  padding-right: 11px;
 }
 
 .successfull_trade{
@@ -143,7 +144,9 @@
   display:flex;
 }
 
-.image-card {
+.product_image{
+  width: 350px;
+  height: 350px;
   border-bottom: 2px solid $dark-gray;
   height:350px;
   width:350px;

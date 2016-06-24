@@ -3,7 +3,7 @@
 <div class="show-page" id="product-description">
   <div class="thumbnail">
     <% if @product.photos.any? %>
-    <%= cl_image_tag( @product.photos.first.path, width: 350, height: 350, crop: :fill, class: "image-card", id: "product-photo") %>
+      <%= cl_image_tag( @product.photos.first.path, class: "product_image", id: "product-photo") %>
     <% end %>
     <div class="caption">
       <h3><%= @product.name %></h3>
@@ -34,15 +34,15 @@
 </div>
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">
-  <div id="go-back">
-    <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-  </div>
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <% @product.photos.each_with_index do |photo, index| %>
       <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
       <%end  %>
+  <div id="go-back">
+    <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+  </div>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -53,7 +53,7 @@
         <%else  %>
         <div class="item">
           <%end  %>
-          <%= cl_image_tag photo.path, width: 350, height: 350, crop: :fill %>
+          <%= cl_image_tag photo.path, class: "product_image" %>
           <div class="carousel-caption">
           </div>
         </div>
