@@ -14,25 +14,25 @@
       </div>
 
       <div class="profile-menu">
-        <div class="profile-box">
+        <div class="boxes profile-box">
           <h2> Profile </h2>
         </div>
-        <div class="settings-box">
+        <div class="boxes settings-box">
           <h2> Settings </h2>
         </div>
-        <div class="logout-box">
+        <div class="boxes logout-box">
           <%= link_to destroy_user_session_path, method: :delete do %>
           <h2> Log out </h2>
           <% end %>
         </div>
       </div>
       <div class="products-index products-overview">
-        <div class="add-product-profile">
+        <div class="boxes add-product-profile">
           <%= link_to new_account_product_path do%>
           <div class="add-product-profile-content">
 
             <div class="add-product-profile-description">
-              <p>Add another product!</p>
+              <p>Add a product!</p>
             </div>
           </div>
           <div class="add-product-profile-image">
