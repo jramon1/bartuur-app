@@ -7,18 +7,19 @@
 }
 .badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 4px;
+  right: 2px;
   font-size: 10px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 18px;
-  width: 18px;
+  height: 10px;
+  width: 10px;
   text-align: center;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  padding: 0;
 }
 .badge-green {
   background: $green;
@@ -26,4 +27,8 @@
 .badge-bordered {
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+.badge:empty {
+  display: initial;
+  // if you delete this the badge will dissappear when it's empty
 }

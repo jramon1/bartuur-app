@@ -50,7 +50,7 @@
 .inline-block i {
   font-size: 19px;
   color: $gray;
-  padding: 12px 10px 10px 45px;
+  padding: 0px 10px 10px 45px;
 }
 
 .matches-container > hr {
@@ -64,4 +64,8 @@
 .list-inline {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.icon-green {
+  color: $brand-color;
 }
