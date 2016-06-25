@@ -1,14 +1,22 @@
- <%=  simple_form_for [:account, product] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :photos, as: :attachinary, required: false %>
-        <%= label_tag :product_photos, "", class: "input-file-trigger", tabindex: 0 %>
-        <%= f.input :name, required: false %>
-        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10}, required: false %>
-        <%= f.input :value, as: :integer, required: false %>
-      </div>
 
-        <div class="form-actions">
-          <%= f.submit class: 'btn btn-primary' %>
-        </div>
+<%=  simple_form_for [:account, product] do |f| %>
+<div class="form-inputs">
+  <%= f.input :photos, as: :attachinary, required: false %>
+  <%= label_tag :product_photos, "", class: "input-file-trigger", tabindex: 0 %>
+  <%= f.input :name, required: false %>
+  <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10}, required: false %>
 
-      <% end %>
+  <h5><strong>Value</strong></h5>
+  <ul class="explain-value">
+    <li>Bronze  equals  €0 - €50</li>
+    <li>Silver  equals  €50 - €100</li>
+    <li>Gold    equals  €100 ></li>
+  </ul>
+  <%= f.select :value, ([['Bronze', 1], ['Silver', 2], ['Gold', 3]]), required: false, include_blank: false  %>
+</div>
+
+<div class="form-actions">
+  <%= f.submit class: 'btn btn-primary' %>
+</div>
+
+<% end %>
