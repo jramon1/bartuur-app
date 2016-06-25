@@ -5,9 +5,19 @@
     <% if @product.photos.any? %>
     <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
     <% end %>
-    <div class="caption text-center">
-      <h3><%= @product.name %></h3>
+    <div class="caption">
+      <h4><%= @product.name %></h4>
+
+      <% if @product.value == 1 %>
+      <%= image_tag "blocks/block_bronze.png" %>
+      <% elsif @product.value == 2 %>
+      <%= image_tag "blocks/block_silver.png" %>
+      <% else %>
+      <%= image_tag "blocks/block_gold.png" %>
+      <% end %>
     </div>
+  </div>
+
     <div container>
      <div row>
        <div class="col-xs-6">

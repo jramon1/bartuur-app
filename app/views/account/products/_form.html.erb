@@ -7,11 +7,26 @@
   <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10}, required: false %>
 
   <h5><strong>Value</strong></h5>
-  <ul class="explain-value">
-    <li>Bronze  equals  €0 - €50</li>
-    <li>Silver  equals  €50 - €100</li>
-    <li>Gold    equals  €100 ></li>
-  </ul>
+  <div class="explain-value">
+  <%= image_tag "blocks/all_blocks.png" %>
+    <table style="width:75%">
+      <tr>
+        <td>Bronze</td>
+        <td>equals</td>
+        <td>€0 - €50</td>
+      </tr>
+      <tr>
+        <td>Silver</td>
+        <td>equals</td>
+        <td>€50 - €100</td>
+      </tr>
+      <tr>
+        <td>Gold</td>
+        <td>equals</td>
+        <td>€100 ></td>
+      </tr>
+    </table>
+  </div>
   <%= f.select :value, ([['Bronze', 1], ['Silver', 2], ['Gold', 3]]), required: false, include_blank: false  %>
 </div>
 
