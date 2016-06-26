@@ -259,6 +259,82 @@ guitar.photos << Attachinary::File.new({
 
 guitar.save!
 
+# Mike -- raiban
+
+raiban = Product.new(
+  name: "Raiban",
+  description: "Brand new raiban never used.",
+  value: 2,
+  user: mike
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/raiban.jpg"))
+
+raiban.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+raiban.save!
+
+# Mike -- komonowatch
+
+watch = Product.new(
+  name: "Komono",
+  description: "Watch from the brand komono. Worn a few times",
+  value: 3,
+  user: mike
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/komono.jpg"))
+
+watch.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+watch.save!
+
+# Mike -- snowboard
+
+snowboard = Product.new(
+  name: "burton",
+  description: "super nice beginner snowboard form the brand burton. Used 5 seasons, perfect condition.",
+  value: 3,
+  user: mike
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/burton.jpg"))
+
+snowboard.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+snowboard.save!
+
+
 ##################################################
 #
 # MATCHES
