@@ -84,7 +84,7 @@ puts "Creating products..."
 sunglasses = Product.new(
   name: "Sunglasses",
   description: "Person 714 great condition",
-  value: 3,
+  value: 2,
   user: jesse
 )
 
@@ -161,7 +161,7 @@ jacket.save!
 bike = Product.new(
   name: "Bike",
   description: "Old 90's quality. Always protected against the weather in my little barn.",
-  value: 3,
+  value: 2,
   user: jurjen
 )
 
@@ -187,7 +187,7 @@ bike.save!
 iphone = Product.new(
   name: "iPhone 5",
   description: "Some little scratches, but works perfectly!",
-  value: 5,
+  value: 3,
   user: jurjen
 )
 
@@ -213,7 +213,7 @@ iphone.save!
 closet = Product.new(
   name: "Vintage closet",
   description: "Swedish vintage design, from the 70ties",
-  value: 5,
+  value: 3,
   user: jurjen
 )
 
@@ -239,7 +239,7 @@ closet.save!
 guitar = Product.new(
   name: "Acoustic guitar",
   description: "A California (Aria) dreadnought. State: as good as new.",
-  value: 4,
+  value: 2,
   user: jurjen
 )
 
@@ -296,7 +296,7 @@ Match.create!(
 
 appreciation3 = Appreciation.create!(
   liked: true,
-  product: bike,
+  product: closet,
   user: mike
 )
 

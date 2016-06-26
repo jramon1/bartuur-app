@@ -1,0 +1,17 @@
+<h1>Chats:</h1>
+
+<%= simple_form_for @conversation do |f| %>
+  <%= f.collection_select :recipient_id, @users, :id, :username %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li>
+      <% conversation.sender_id == current_user.id ? partner = User.find(conversation.recipient_id) : partner = User.find(conversation.sender_id) %>
+      <%= link_to partner.username, conversation_messages_path(conversation) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>

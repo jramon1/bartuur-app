@@ -1,0 +1,20 @@
+<h1>Chat History:</h1>
+
+<%= link_to 'Back', matches_path %>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li>
+      <p>
+        <b><%= User.find(message.user_id).first_name %>:</b>
+        <%= message.content %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [@match, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+
