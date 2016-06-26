@@ -259,6 +259,46 @@ guitar.photos << Attachinary::File.new({
 
 guitar.save!
 
+# Mike -- raiban
+
+raiban = Product.new(
+  name: "Raiban",
+  description: "Brand new raiban never used.",
+  value: 2,
+  user: mike
+)
+
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/raiban.jpg"))
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/raiban2.jpg"))
+
+raiban.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+raiban2.photos << Attachinary::File.new({
+  version:               photo["version"],
+  public_id:             photo["public_id"],
+  resource_type:         "image",
+  attachinariable_type:  "Product",
+  scope:                 "photos",
+  width:                 photo["width"],
+  height:                photo["height"],
+  pic_name:              photo["original_filename"],
+  format:                "jpg"
+})
+
+
+
+raiban.save!
+
 ##################################################
 #
 # MATCHES
