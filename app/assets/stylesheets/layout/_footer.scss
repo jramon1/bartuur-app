@@ -2,11 +2,12 @@
 
 #footer {
   position: fixed;
-  bottom: 17px;
+  bottom: 0px;
   height: 70px;
+  width:370px;
   display:flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: white;
   opacity: 0.8;
   margin-left: -10px;
@@ -15,21 +16,30 @@
   font-size: 30px;
 }
 
+
+a{
+text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
 .smiley-footer {
  height: 60px;
  margin: 0 auto;
  border-radius: 50px;
- margin-top: 40px;
+ margin-top: 0px;
  width: 60px;
-}
-
-.fa-check{
-  color:white;
 }
 
 .fa-times{
   color:white;
 }
+.fa-exchange{
+  color:white;
+}
+
 
 .smiley-footer.red{
   background-color:$red;
