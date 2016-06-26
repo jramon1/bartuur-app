@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
   validates :value, presence: true
+  validates :value, inclusion: { in: [1, 2, 3] }
   validates :photos, presence: true
 
   belongs_to :user

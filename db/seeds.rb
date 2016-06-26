@@ -136,7 +136,7 @@ rubber_duck.save!
 jacket = Product.new(
   name: "Armani Jacket",
   description: "Crocodile leather",
-  value: 3,
+  value: 2,
   user: mike
 )
 
@@ -187,7 +187,7 @@ bike.save!
 iphone = Product.new(
   name: "iPhone 5",
   description: "Some little scratches, but works perfectly!",
-  value: 3,
+  value: 2,
   user: jurjen
 )
 
