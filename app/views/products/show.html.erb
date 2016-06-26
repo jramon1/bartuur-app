@@ -2,9 +2,9 @@
 
 <div class="show-page" id="product-description">
   <div class="thumbnail">
-    <% if @product.photos.any? %>
-    <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
-    <% end %>
+      <% if @product.photos.any? %>
+      <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
+      <% end %>
     <div class="caption">
       <h4><%= @product.name %></h4>
     </div>
@@ -17,11 +17,10 @@
      <%= image_tag "blocks/block_gold.png" %>
      <% end %>
    </div>
-
  </div>
 
  <div container>
-   <div row>
+   <div row text-center>
      <div class="col-xs-6" id="cross-button">
        <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
        <%= f.hidden_field :liked %>
@@ -41,7 +40,6 @@
      </div>
    </div>
  </div>
-</div>
 </div>
 
 <!-- Mike's work product description -->
