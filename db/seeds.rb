@@ -261,7 +261,7 @@ guitar.save!
 
 # Mike -- raiban
 
-raiban = Product.new(
+rayban = Product.new(
   name: "Raiban",
   description: "Brand new raiban never used.",
   value: 2,
@@ -270,7 +270,7 @@ raiban = Product.new(
 
 photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/raiban.jpg"))
 
-raiban.photos << Attachinary::File.new({
+rayban.photos << Attachinary::File.new({
   version:               photo["version"],
   public_id:             photo["public_id"],
   resource_type:         "image",
@@ -282,7 +282,7 @@ raiban.photos << Attachinary::File.new({
   format:                "jpg"
 })
 
-raiban.save!
+rayban.save!
 
 # Mike -- komonowatch
 

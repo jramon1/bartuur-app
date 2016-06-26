@@ -7,38 +7,41 @@
     <% end %>
     <div class="caption">
       <h4><%= @product.name %></h4>
-
-      <% if @product.value == 1 %>
-      <%= image_tag "blocks/block_bronze.png" %>
-      <% elsif @product.value == 2 %>
-      <%= image_tag "blocks/block_silver.png" %>
-      <% else %>
-      <%= image_tag "blocks/block_gold.png" %>
-      <% end %>
     </div>
-  </div>
+    <div class="value text-center">
+     <% if @product.value == 1 %>
+     <%= image_tag "blocks/block_bronze.png" %>
+     <% elsif @product.value == 2 %>
+     <%= image_tag "blocks/block_silver.png" %>
+     <% else %>
+     <%= image_tag "blocks/block_gold.png" %>
+     <% end %>
+   </div>
 
-    <div container>
-     <div row>
-       <div class="col-xs-6">
-         <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
-         <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
-         <i class="fa fa-times"></i>
-         <% end %>
-         <% end %>
-       </div>
-       <div class="col-xs-6">
-         <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-         <%= f.hidden_field :liked %>
-         <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options_po") do %>
-         <i class="fa fa-check"></i>
-         <% end %>
-         <% end %>
-       </div>
+ </div>
+
+ <div container>
+   <div row>
+     <div class="col-xs-6" id="cross-button">
+       <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
+       <%= f.hidden_field :liked %>
+       <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
+       <i class="fa fa-times"></i>
+       <% end %>
+       <% end %>
+     </div>
+     <div class="col-xs-6" id="check-button">
+       <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+       <%= f.hidden_field :liked %>
+       <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options_po") do %>
+       <i class="fa fa-exchange"></i>
+
+       <% end %>
+       <% end %>
      </div>
    </div>
  </div>
+</div>
 </div>
 
 <!-- Mike's work product description -->
