@@ -4,8 +4,11 @@
     <title>Bartuur App</title>
     <%= csrf_meta_tags %>
 
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
     <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="<%= meta_title %>" />
+ <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:image" content="<%= image_url(meta_image) %>" />
