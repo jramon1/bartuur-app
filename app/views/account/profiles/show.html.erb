@@ -39,12 +39,12 @@
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
             <div class="product-card-content text-center">
-              <div class="product-title">
+              <h4 class="product-title">
                 <%= product.name %>
-              </div>
-              <div class="product-description">
+              </h4>
+              <p class="product-description">
                 <%= product.description %>
-              </div>
+              </p>
             </div>
             <div class="product-card-extra">
               <% if product.value == 1 %>
@@ -82,9 +82,8 @@
             <%= f.input :street, required: false, as: "string" %>
             <%= f.input :zip_code, required: false, as: "string" %>
             <%= f.input :city, required: false, as: "string" %>
-            <%= f.input :distance_radius, required: false, collection: [5, 10, 15, 20, 25, 50, 100] %>
+            <%= f.input :distance_radius, label: "Distance radius (km)", required: false, collection: [5, 10, 15, 20, 25, 50, 100] %>
           </div>
-
           <div class="form-actions">
             <%= f.button :submit, "Save Profile", class:'btn-primary' %>
           </div>
