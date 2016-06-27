@@ -187,6 +187,19 @@
   justify-content: space-around;
 }
 
+.smiley_options_po:focus {
+outline:transparent;
+}
+
+.smiley_options:focus {
+outline:transparent;
+}
+
+
+.btn:active:focus{
+outline:transparent;
+}
+
 // .product_image{
 //   border-bottom: 2px solid $gray;
 // }
@@ -228,4 +241,25 @@
 
 .glyphicon-chevron-right:before {
   color: $green;
+}
+
+.popover-content {
+  padding: 9px 14px;
+  font-size: 10px;
+  background-color: $green;
+  color: white;
+}
+
+.value {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.value:focus {
+ outline: transparent;
+ background-color: transparent;
+}
+
+.value_show{
+
 }
