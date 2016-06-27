@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
       redirect_to deckend_products_path
     end
   end
+
+  def default_url_options
+    { host: ENV['HOST'] || 'localhost:3000' }
+  end
 end
