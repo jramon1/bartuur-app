@@ -337,6 +337,33 @@ end
 
 snowboard.save!
 
+# Mike -- computer
+
+ hp = Product.new(
+  name: "computer",
+  description: "hp computer 2 years old,  perfect condition.",
+  value: 3,
+  user: mike
+)
+
+["HP.jpg", "hpphotoback.jpg" ].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/#{filename}"))
+
+  hp.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+hp.save!
+
 
 ##################################################
 #
