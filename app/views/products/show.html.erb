@@ -47,7 +47,7 @@
 <div class="carousel-container" type="button" id="carousel-container">
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators text-center">
       <% @product.photos.each_with_index do |photo, index| %>
       <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
       <%end  %>
@@ -102,7 +102,7 @@
             <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
           </div>
           <div class="successfull_trade">
-           <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+           <i class="fa fa-check-square-o" aria-hidden="true">  4 succesfull trades</i>
          </div>
        </div>
      </div>
