@@ -32,10 +32,10 @@
 
       <div class="products-index products-overview">
         <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
-        <% @products.each do |product| %>
-        <% if product.photos.any? %>
+          <% @products.each do |product| %>
+          <% if product.photos.any? %>
           <div class="product-card">
-            <%= link_to edit_account_product_path(product), class: "product-flex" do%>
+            <%= link_to edit_account_product_path(product), class: "product-flex" do %>
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
@@ -48,10 +48,18 @@
               </div>
             </div>
             <div class="product-card-extra">
-              <%= product.value %>
-            </div>
-            <%end%>
-            <%end%>
+              <div class="value text-center">
+               <% if product.value == 1 %>
+               <%= image_tag "blocks/block_bronze.png" %>
+               <% elsif product.value == 2 %>
+               <%= image_tag "blocks/block_silver.png" %>
+               <% else %>
+               <%= image_tag "blocks/block_gold.png" %>
+               <% end %>
+             </div>
+           </div>
+           <% end %>
+           <% end %>
           </div>
           <%end%>
           <div class="boxes add-product-profile">
