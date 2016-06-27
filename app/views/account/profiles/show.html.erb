@@ -83,9 +83,8 @@
             <%= f.input :street, required: false, as: "string" %>
             <%= f.input :zip_code, required: false, as: "string" %>
             <%= f.input :city, required: false, as: "string" %>
-            <%= f.input :distance_radius, required: false, collection: [5, 10, 15, 20, 25, 50, 100] %> <p>km</p>
+            <%= f.input :distance_radius, label: "Distance radius (km)", required: false, collection: [5, 10, 15, 20, 25, 50, 100] %>
           </div>
-
           <div class="form-actions">
             <%= f.button :submit, "Save Profile", class:'btn-primary' %>
           </div>
