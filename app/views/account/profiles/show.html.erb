@@ -39,8 +39,8 @@
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
-            <div class="product-card-content">
-              <h4 class="product-title">
+            <div class="product-card-content text-center">
+              <div class="product-title">
                 <%= product.name %>
               </h4>
               <p class="product-description">
@@ -48,18 +48,16 @@
               </p>
             </div>
             <div class="product-card-extra">
-              <div class="value text-center">
-               <% if product.value == 1 %>
-               <%= image_tag "blocks/block_bronze.png" %>
-               <% elsif product.value == 2 %>
-               <%= image_tag "blocks/block_silver.png" %>
-               <% else %>
-               <%= image_tag "blocks/block_gold.png" %>
-               <% end %>
-             </div>
-           </div>
-           <% end %>
-           <% end %>
+              <% if product.value == 1 %>
+              <%= image_tag "blocks/block_bronze.png" %>
+              <% elsif product.value == 2 %>
+              <%= image_tag "blocks/block_silver.png" %>
+              <% else %>
+              <%= image_tag "blocks/block_gold.png" %>
+              <% end %>
+            </div>
+            <%end%>
+            <%end%>
           </div>
           <%end%>
           <div class="boxes add-product-profile">
@@ -85,6 +83,7 @@
             <%= f.input :street, required: false, as: "string" %>
             <%= f.input :zip_code, required: false, as: "string" %>
             <%= f.input :city, required: false, as: "string" %>
+            <%= f.input :distance_radius, required: false, collection: [5, 10, 15, 20, 25, 50, 100] %>
           </div>
 
           <div class="form-actions">
@@ -92,9 +91,9 @@
           </div>
           <% end %>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
-
-<!-- f.input :distance, required: true, as: "string", collection: [5, 10, 15, 20, 25] -->
