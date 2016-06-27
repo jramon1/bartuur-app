@@ -268,7 +268,8 @@ rayban = Product.new(
   user: mike
 )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/raiban.jpg"))
+["raiban.jpg","raiban2.jpg"].each do |filename|
+photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/#{filename}"))
 
 rayban.photos << Attachinary::File.new({
   version:               photo["version"],
@@ -318,19 +319,21 @@ snowboard = Product.new(
   user: mike
 )
 
-photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/burton.jpg"))
+["burton.jpg"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/#{filename}"))
 
-snowboard.photos << Attachinary::File.new({
-  version:               photo["version"],
-  public_id:             photo["public_id"],
-  resource_type:         "image",
-  attachinariable_type:  "Product",
-  scope:                 "photos",
-  width:                 photo["width"],
-  height:                photo["height"],
-  pic_name:              photo["original_filename"],
-  format:                "jpg"
-})
+  snowboard.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
 
 snowboard.save!
 
