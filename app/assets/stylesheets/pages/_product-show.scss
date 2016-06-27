@@ -1,3 +1,10 @@
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 22px;
+  border:0px solid;
+}
+
 .show-page {
   display: flex;
   align-items: center;
@@ -64,7 +71,6 @@
   height: 10px;
   margin: 1px;
   text-indent: -999px;
-  border: 1px solid $green;
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
@@ -179,9 +185,9 @@
   justify-content: space-around;
 }
 
-.product_image{
-  border-bottom: 2px solid $gray;
-}
+// .product_image{
+//   border-bottom: 2px solid $gray;
+// }
 
 .fa-exchange{
   font-size:30px;
@@ -207,5 +213,5 @@
 }
 
 .value{
-font-size:15px;
+  font-size:15px;
 }
