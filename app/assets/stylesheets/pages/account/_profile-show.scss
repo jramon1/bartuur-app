@@ -47,19 +47,19 @@
 }
 
 .product-title {
-  font-weight: 600;
-  font-size: 1.28571429em;
+  // font-weight: 600;
+  // font-size: 1.28571429em;
   margin-top: 0.5em;
   line-height: 1.2857em;
   margin-bottom: 15px;
   border-top: 1px solid rgba(0,0,0,.05)!important;
-  color: $dark-gray;
+  // color: $dark-gray;
 }
 
 .product-card-extra {
   height: 50px;
   border-top: 1px solid rgba(0,0,0,.05)!important;
-    align-items: center;
+  align-items: center;
   justify-content: center;
   display: flex;
   width: 100%

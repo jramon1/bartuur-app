@@ -10,14 +10,18 @@
     </div>
     <div class="value text-center">
      <% if @product.value == 1 %>
-     <%= image_tag "blocks/block_bronze.png" %>
+ <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 0 and 49€ "><%= image_tag("blocks/block_bronze.png") %></button>
      <% elsif @product.value == 2 %>
-     <%= image_tag "blocks/block_silver.png" %>
+     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 50 - 99€ "><%= image_tag "blocks/block_silver.png" %></button>
      <% else %>
-     <%= image_tag "blocks/block_gold.png" %>
+     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is 100€ and more "><%= image_tag "blocks/block_gold.png" %></button>
      <% end %>
    </div>
  </div>
+
+
+
+
 
  <div container>
    <div row>
@@ -47,7 +51,7 @@
 <div class="carousel-container" type="button" id="carousel-container">
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators text-center">
       <% @product.photos.each_with_index do |photo, index| %>
       <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
       <%end  %>
@@ -102,7 +106,7 @@
             <i class="fa fa-user" aria-hidden="true"><%=@user.friends_count%> friends</i>
           </div>
           <div class="successfull_trade">
-           <i class="fa fa-check-square-o" aria-hidden="true"><%=4%> succesfull trades</i>
+           <i class="fa fa-check-square-o" aria-hidden="true">  4 succesfull trades</i>
          </div>
        </div>
      </div>

@@ -1,22 +1,23 @@
 <%= render 'shared/navbars/arrow_user_product' %>
 
-<!-- @match.messages // return all messages
-  // who sent it (user_id) -->
+<div class="container-chat">
+  <% @match.messages.each do |message| %>
+  <% if message.user_id == @other_user.id %>
+  <p class="them">
+    <%= message.content %>
+  </p>
+  <% else %>
+  <p class="me">
+    <%= message.content %>
+  </p>
+  <% end %>
+  <% end %>
 
   <%= simple_form_for [@match, @message], url: account_match_messages_path(@match) do |f| %>
-  <%=f.input :content, as: :text, input_html: {rows: 5, cols: 10} %>
+  <%=f.input :content, as: :text, input_html: {rows: 2, cols: 10} %>
   <div class="form-actions">
     <%= f.submit %>
   </div>
 
   <% end %>
-
-  <ul>
-    <% @match.messages.each do |message| %>
-    <li>
-      <%= message.user_id%>
-      <%= message.content %>
-    </li>
-    <% end %>
-  </ul>
-
+</div>

@@ -26,7 +26,9 @@
 
 .carousel-container{
   width: 350px;
+  height:350px;
   margin: 0 auto;
+  margin-top:10px;
 }
 
 .carousel-control{
@@ -95,9 +97,7 @@
 }
 
 .product-description{
-  color: $gray;
   margin-bottom: 40px;
-  font-size: 20px;
 }
 
 .extra-info{
@@ -185,6 +185,19 @@
   justify-content: space-around;
 }
 
+.smiley_options_po:focus {
+outline:transparent;
+}
+
+.smiley_options:focus {
+outline:transparent;
+}
+
+
+.btn:active:focus{
+outline:transparent;
+}
+
 // .product_image{
 //   border-bottom: 2px solid $gray;
 // }
@@ -205,13 +218,46 @@
 
 #cross-button{
   padding-left: 50px;
-  padding-right: 70px;
+  padding-right: 50px;
+  margin-top:-20px;
 }
 #check-button{
-  padding-left: 70px;
+  padding-left: 50px;
   padding-right: 50px;
+  margin-top:-20px;
+
 }
 
 .value{
   font-size:15px;
+}
+
+.glyphicon-chevron-left:before {
+  content: "\e079";
+  color: $green;
+}
+
+.glyphicon-chevron-right:before {
+  color: $green;
+}
+
+.popover-content {
+  padding: 9px 14px;
+  font-size: 10px;
+  background-color: $green;
+  color: white;
+}
+
+.value {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.value:focus {
+ outline: transparent;
+ background-color: transparent;
+}
+
+.value_show{
+
 }
