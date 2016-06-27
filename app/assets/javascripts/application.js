@@ -6,3 +6,7 @@
 //= require attachinary
 //= require_tree
 //=require show_products
+
+$(window).load(function() {
+  $("#mymodal").modal('show');
+});

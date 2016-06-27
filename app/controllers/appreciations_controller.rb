@@ -1,4 +1,5 @@
 class AppreciationsController < ApplicationController
+  add_flash_types :match
 
   def create
     @appreciation = current_user.appreciations.where(product_id: params[:product_id]).first_or_create do |appreciation|
@@ -13,8 +14,8 @@ class AppreciationsController < ApplicationController
       check_for_a_matching
 
       if @match
-        flash[:notice] = "Match!!"
         return redirect_to account_match_path(@match)
+        flash[:match] = "Match!!"
       end
     else
       flash[:alert] = 'Oops, an error just occured!'
