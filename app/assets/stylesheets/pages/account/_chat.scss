@@ -19,17 +19,17 @@
     float: left;
     color: black;
     background-color: $light-gray;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: -0.5em;
-      bottom: 0;
-      width: 0.5em;
-      height: 1em;
-      border-right: 0.5em solid $gray;
-      border-bottom-right-radius: 1em 0.5em;
-    }
+// Below the code for the balloon thingie, only this doesn't work for some reason.
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   left: -0.5em;
+    //   bottom: 0;
+    //   width: 0.5em;
+    //   height: 1em;
+    //   border-right: 0.5em solid gray;
+    //   border-bottom-right-radius: 1em
+    // }
   }
 
   &.me {
@@ -37,15 +37,15 @@
     background-color: $green;
     color: white;
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: -0.5em;
-      bottom: 0;
-      width: 0.5em;
-      height: 1em;
-      border-left: 0.5em solid blue;
-      border-bottom-left-radius: 1em 0.5em;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: -0.5em;
+    //   bottom: 0;
+    //   width: 0.5em;
+    //   height: 1em;
+    //   border-left: 0.5em solid blue;
+    //   border-bottom-left-radius: 1em 0.5em;
+    // }
   }
 }
