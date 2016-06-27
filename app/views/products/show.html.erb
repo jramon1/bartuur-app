@@ -1,7 +1,7 @@
 <%= render 'shared/navbars/profile_logo_chat' %>
 
 <div class="show-page" id="product-description">
-  <div class="thumbnail">
+  <div class="thumbnail text-center">
       <% if @product.photos.any? %>
       <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
       <% end %>
@@ -20,7 +20,7 @@
  </div>
 
  <div container>
-   <div row text-center>
+   <div row>
      <div class="col-xs-6" id="cross-button">
        <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
        <%= f.hidden_field :liked %>
@@ -41,6 +41,7 @@
    </div>
  </div>
 </div>
+
 
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">
