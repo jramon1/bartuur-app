@@ -11,7 +11,7 @@ class AppreciationsController < ApplicationController
     # @appreciation.user = current_user
 
     if @appreciation.save
-      check_for_a_matching
+      check_for_matching
 
       if @match
         return redirect_to account_match_path(@match)
@@ -26,29 +26,36 @@ class AppreciationsController < ApplicationController
 
   private
 
-  def check_for_a_matching
+  def check_for_matching
     # do not try to make a Match if user disliked the product
     return if @appreciation.liked == false
 
-    appreciated_product = @appreciation.product
+    appreciated_product      = @appreciation.product
     other_user_appreciations = appreciated_product.user.appreciations
 
     # Find the first matching liked appreciation
     # on one of our products with same value
-    matching_appreciation = other_user_appreciations.
+    @matching_appreciations = other_user_appreciations.
       joins(:product).
-      where(liked: true, products: { user_id: current_user.id, delivered: false, value: appreciated_product.value }).
-      order(:created_at).
-      first
+      where(
+        liked: true,
+        products: {
+          user_id:   current_user.id,
+          delivered: false,
+          value:     appreciated_product.value
+        }
+      )
 
-    return unless matching_appreciation
+    return if @matching_appreciations.empty?
 
-    # Creating the Match
-    @match = Match.create!(
-      appreciation: @appreciation,
-      secondary_appreciation: matching_appreciation,
-      code: SecureRandom.hex(3).upcase
-    )
+    # Creating the Matches
+    @matching_appreciations.each do |matching_appreciation|
+      Match.create!(
+        appreciation:           @appreciation,
+        secondary_appreciation: matching_appreciation,
+        code:                   SecureRandom.hex(3).upcase
+      )
+    end
   end
 
   def appreciation_params

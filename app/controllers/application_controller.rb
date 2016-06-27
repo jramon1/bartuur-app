@@ -8,23 +8,29 @@ class ApplicationController < ActionController::Base
   protected
 
   def next_product
+    # Find nearby other users based on our distance radius
     if current_user.distance_radius.present?
       @nearby_user_ids = User.near(current_user.full_address, current_user.distance_radius, units: :km).map(&:id)
     end
 
+    # Find our product values
+    product_values = current_user.products.pluck("DISTINCT value")
+
     # products that:
     # - are not yours
     # - your haven't made any appreciation on it
-    # - are in your area (based on distance)
-    # ordered randomly and take the first one
+    # - have same value of one of our products
+    # - are in your area (based on distance of the other users)
     @products = Product.joins("LEFT OUTER JOIN appreciations ON products.id = appreciations.product_id AND appreciations.user_id = #{current_user.id}").
       where.not(user_id: current_user.id).
-      where(appreciations: { id: nil })
+      where(appreciations: { id: nil }).
+      where(value: product_values)
 
     if @nearby_user_ids
       @products = @products.where(user_id: @nearby_user_ids)
     end
 
+    # ordered randomly and take the first one
     @products.order("RANDOM()").first
   end
 

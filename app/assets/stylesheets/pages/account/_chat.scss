@@ -1,6 +1,6 @@
 
 .container-chat {
-  background: white;
+  background-color: white;
   margin: 0 auto;
   max-width: 600px;
   padding: 20px 10px 0px 10px;
@@ -10,7 +10,7 @@
   margin: 0 0 0.5em;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: &dark-gray;
+  background-color: &dark-gray;
   max-width: 75%;
   clear: both;
   position: relative;
@@ -19,33 +19,11 @@
     float: left;
     color: black;
     background-color: $light-gray;
-// Below the code for the balloon thingie, only this doesn't work for some reason.
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   left: -0.5em;
-    //   bottom: 0;
-    //   width: 0.5em;
-    //   height: 1em;
-    //   border-right: 0.5em solid gray;
-    //   border-bottom-right-radius: 1em
-    // }
   }
 
   &.me {
     float: right;
     background-color: $green;
     color: white;
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   right: -0.5em;
-    //   bottom: 0;
-    //   width: 0.5em;
-    //   height: 1em;
-    //   border-left: 0.5em solid blue;
-    //   border-bottom-left-radius: 1em 0.5em;
-    // }
   }
 }
