@@ -10,7 +10,7 @@
         <%= cl_image_tag @other_user.picture, class: "avatar" %>
       </li>
       <li>
-        <h4><%= @other_user.first_name %> <%= @other_user.last_name %></h4>
+        <h4><%= @other_user.first_name %> <%= @other_user.last_name[0,1] %>.</h4>
       </li>
     </ul>
   </div>
