@@ -1,10 +1,10 @@
 <%= render 'shared/navbars/profile_logo_chat' %>
 
 <div class="show-page" id="product-description">
-  <div class="thumbnail">
-    <% if @product.photos.any? %>
-    <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
-    <% end %>
+  <div class="thumbnail text-center">
+      <% if @product.photos.any? %>
+      <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
+      <% end %>
     <div class="caption">
       <h4><%= @product.name %></h4>
     </div>
@@ -17,7 +17,6 @@
      <%= image_tag "blocks/block_gold.png" %>
      <% end %>
    </div>
-
  </div>
 
  <div container>
@@ -42,7 +41,7 @@
    </div>
  </div>
 </div>
-</div>
+
 
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">

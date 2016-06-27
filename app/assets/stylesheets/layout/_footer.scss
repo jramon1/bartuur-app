@@ -2,20 +2,18 @@
 
 #footer {
   position: fixed;
-  bottom: 0px;
   height: 70px;
-  width:370px;
+  width:350px;
   display:flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
   opacity: 0.8;
-  margin-left: -10px;
 }
+
 .icon-footer {
   font-size: 30px;
 }
-
 
 a{
 text-decoration: none;
@@ -39,7 +37,6 @@ a:hover{
 .fa-exchange{
   color:white;
 }
-
 
 .smiley-footer.red{
   background-color:$red;
