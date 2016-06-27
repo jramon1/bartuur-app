@@ -38,6 +38,14 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= yield :after_js %>
+
+    <%= javascript_tag do %>
+       $(function() {
+       $('#flashes').delay(0).fadeIn('normal', function() {
+       $(this).delay(1500).slideUp();
+        });
+        });
+        <% end %>
     <%= cloudinary_js_config %>
   </body>
 </html>
