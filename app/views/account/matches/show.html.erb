@@ -1,11 +1,11 @@
 <%= render 'shared/navbars/arrow_user_product' %>
 
-<div class="container-chat">
-
+<div class="container-match-since">
   <p>Match since <%= @match_since %> </p>
   <hr>
+</div>
 
-
+<div class="container-chat">
   <% @match.messages.each do |message| %>
   <% if message.user_id == @other_user.id %>
   <p class="them">
@@ -19,7 +19,7 @@
   <% end %>
 
   <%= simple_form_for [@match, @message], url: account_match_messages_path(@match) do |f| %>
-  <%=f.input :content, as: :text, input_html: {rows: 2, cols: 10} %>
+  <%= f.input :content, as: :text, input_html: {rows: 2, cols: 10}, required: false %>
   <div class="form-actions">
     <%= f.submit %>
   </div>

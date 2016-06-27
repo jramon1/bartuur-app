@@ -10,7 +10,7 @@
   margin: 0 0 0.5em;
   border-radius: 1em;
   padding: 0.5em 1em;
-  background: &dark-gray;
+  background: $dark-gray;
   max-width: 75%;
   clear: both;
   position: relative;
@@ -49,3 +49,19 @@
     // }
   }
 }
+
+.container-match-since {
+  text-align: center;
+  font-weight: lighter;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px 0px 0px 0px;
+}
+
+.container-match-since > hr {
+  width: 135px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
