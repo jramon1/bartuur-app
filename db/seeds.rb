@@ -25,7 +25,8 @@ jesse = User.create!(
   provider: "facebook",
   uid: "1191239214222307",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/13133237_1164443516901877_3662997524109057160_n.jpg?oh=33ff947dc09e1129091369ba96885d0d&oe=57DD8215",
-  friends_count: (100..600).to_a.sample
+  friends_count: (100..600).to_a.sample,
+  distance: 5
 )
 
 mike = User.create!(
@@ -40,7 +41,8 @@ mike = User.create!(
   provider: "facebook",
   uid: "10153717178497602",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12794386_10153463337262602_6946293271583260974_n.jpg?oh=110e79e196e1b7c6bf656aa4360f6eb3&oe=57D3D1D3",
-  friends_count: (100..600).to_a.sample
+  friends_count: (100..600).to_a.sample,
+  distance: 10
 )
 
 walter = User.create!(
@@ -49,11 +51,12 @@ walter = User.create!(
   password_confirmation: "12345678",
   first_name: "Water",
   last_name: "van Woudeberg",
-  street: "Johan Huizingalaan 763A",
-  zip_code: "1066VH",
-  city: "Amsterdam",
+  street: "Anjerhof 60",
+  zip_code: "3434HS",
+  city: "Utrecht",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-1/10006110_653789704680687_3666752_n.jpg?oh=a911d5c4efff341ccb05a6a280ebc31b&oe=57C3F054",
-  friends_count: (100..600).to_a.sample
+  friends_count: (100..600).to_a.sample,
+  distance: 15
 )
 
 jurjen = User.create!(
@@ -62,13 +65,14 @@ jurjen = User.create!(
   password_confirmation: "12345678",
   first_name: "Jurjen",
   last_name: "Munneke",
-  street: "Admiraal de Ruijterweg 296-2",
-  zip_code: "1055MS",
-  city: "Amsterdam",
+  street: "trosdravik 91",
+  zip_code: "8935",
+  city: "Leeuwarden",
   provider: "facebook",
   uid: "1125025977540342",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12301502_1008253785884229_2873181151236248682_n.jpg?oh=5c45f0c66aa76dd933f4a7eba4fef69a&oe=57E44838",
-  friends_count: (100..600).to_a.sample
+  friends_count: (100..600).to_a.sample,
+  distance: 50
 )
 
 ##################################################
@@ -282,7 +286,7 @@ rayban.photos << Attachinary::File.new({
   pic_name:              photo["original_filename"],
   format:                "jpg"
 })
-
+end
 rayban.save!
 
 # Mike -- komonowatch
@@ -421,3 +425,4 @@ Match.create!(
   secondary_appreciation: appreciation4,
   code: SecureRandom.hex(3).upcase
 )
+

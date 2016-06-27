@@ -21,7 +21,7 @@ class Account::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:street, :zip_code, :city)
+    params.require(:user).permit(:street, :zip_code, :city, :distance_radius)
   end
 
 end

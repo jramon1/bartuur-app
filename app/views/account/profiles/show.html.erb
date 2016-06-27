@@ -32,14 +32,14 @@
 
       <div class="products-index products-overview">
         <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
-        <% @products.each do |product| %>
-        <% if product.photos.any? %>
+          <% @products.each do |product| %>
+          <% if product.photos.any? %>
           <div class="product-card">
             <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
-            <div class="product-card-content">
+            <div class="product-card-content text-center">
               <div class="product-title">
                 <%= product.name %>
               </div>
@@ -48,7 +48,13 @@
               </div>
             </div>
             <div class="product-card-extra">
-              <%= product.value %>
+              <% if product.value == 1 %>
+              <%= image_tag "blocks/block_bronze.png" %>
+              <% elsif product.value == 2 %>
+              <%= image_tag "blocks/block_silver.png" %>
+              <% else %>
+              <%= image_tag "blocks/block_gold.png" %>
+              <% end %>
             </div>
             <%end%>
             <%end%>
@@ -77,6 +83,7 @@
             <%= f.input :street, required: false, as: "string" %>
             <%= f.input :zip_code, required: false, as: "string" %>
             <%= f.input :city, required: false, as: "string" %>
+            <%= f.input :distance_radius, required: false, collection: [5, 10, 15, 20, 25, 50, 100] %>
           </div>
 
           <div class="form-actions">
@@ -84,9 +91,9 @@
           </div>
           <% end %>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
-
-<!-- f.input :distance, required: true, as: "string", collection: [5, 10, 15, 20, 25] -->

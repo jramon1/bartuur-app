@@ -8,6 +8,22 @@ class User < ActiveRecord::Base
   has_many :messages, dependent: :destroy
   has_many :appreciations, dependent: :destroy
 
+  validates :distance_radius, inclusion: { in: [5, 10, 15, 20, 25, 50, 100], allow_nil: false }, on: :update
+
+  geocoded_by :full_address
+  after_validation :geocode, if: :full_address_changed?
+
+  def full_address
+    @city = self.city
+    @street = self.street
+    @zip_code = self.zip_code
+    return @street + " " + @city + " " + @zip_code
+  end
+
+  def full_address_changed?
+    city_changed? || street_changed? || zip_code_changed?
+  end
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
