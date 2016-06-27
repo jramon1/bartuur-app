@@ -282,7 +282,7 @@ rayban.photos << Attachinary::File.new({
   pic_name:              photo["original_filename"],
   format:                "jpg"
 })
-
+end
 rayban.save!
 
 # Mike -- komonowatch
