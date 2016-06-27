@@ -1,23 +1,15 @@
 
 <div id="footer">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-xs-6 ">
         <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
         <%= f.hidden_field :liked %>
         <%= button_tag(type: 'submit', class: "smiley-footer red") do %>
         <i class="fa fa-times"></i>
         <% end %>
         <% end %>
-      </div>
-      <div class="col-xs-6">
        <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
        <%= f.hidden_field :liked %>
        <%= button_tag(type: 'submit', class: "smiley-footer green") do %>
        <i class="fa fa-exchange"></i>
        <% end %>
        <% end %>
-     </div>
    </div>
- </div>
-</div>
