@@ -35,17 +35,17 @@
           <% @products.each do |product| %>
           <% if product.photos.any? %>
           <div class="product-card">
-            <%= link_to edit_account_product_path(product), class: "product-flex" do %>
+            <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
             <div class="product-card-content text-center">
               <div class="product-title">
                 <%= product.name %>
-              </h4>
-              <p class="product-description">
+              </div>
+              <div class="product-description">
                 <%= product.description %>
-              </p>
+              </div>
             </div>
             <div class="product-card-extra">
               <% if product.value == 1 %>
