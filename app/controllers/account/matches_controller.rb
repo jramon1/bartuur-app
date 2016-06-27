@@ -6,6 +6,7 @@ class Account::MatchesController < ApplicationController
   def show
     @message = Message.new
     @match = current_user.matches.find(params[:id])
+    @match_since = @match.created_at
     appreciation = @match.appreciation
     secondary_appreciation = @match.secondary_appreciation
     # @other_user = @match.appreciation.user

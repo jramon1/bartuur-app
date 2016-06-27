@@ -1,6 +1,11 @@
 <%= render 'shared/navbars/arrow_user_product' %>
 
 <div class="container-chat">
+
+  <p>Match since <%= @match_since %> </p>
+  <hr>
+
+
   <% @match.messages.each do |message| %>
   <% if message.user_id == @other_user.id %>
   <p class="them">
