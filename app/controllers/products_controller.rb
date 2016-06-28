@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
     @appreciation_negative          = Appreciation.new
     @appreciation_negative.product  = @product
     @appreciation_negative.liked    = false
+
+    @distance = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [@user.latitude, @user.longitude], units: :km)
   end
 
   def show_description
