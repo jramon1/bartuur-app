@@ -17,7 +17,7 @@
 .icon-footer {
  height: 64px;
  margin: 0 auto;
- width: 185px;
+ width: 200px;
 }
 
 .fa-times{
@@ -31,6 +31,7 @@
   background-color:$gray;
   border-color: transparent;
   opacity:0.8;
+  margin-right: 2px;
 }
 
 .icon-footer.grey:hover:focus{
@@ -54,7 +55,7 @@
   opacity: 1;
 }
 
-.smiley-footer.green:hover{
+.icon-footer.green:hover{
   outline:transparent;
   opacity: 1;
 }
