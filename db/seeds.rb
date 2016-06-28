@@ -217,7 +217,7 @@ iphone.save!
 closet = Product.new(
   name: "Vintage closet",
   description: "Swedish vintage design, from the 70ties",
-  value: 3,
+  value: 2,
   user: jurjen
 )
 
@@ -294,7 +294,7 @@ rayban.save!
 watch = Product.new(
   name: "Komono",
   description: "Watch from the brand komono. Worn a few times",
-  value: 3,
+  value: 2,
   user: mike
 )
 
@@ -319,7 +319,7 @@ watch.save!
 snowboard = Product.new(
   name: "burton",
   description: "super nice beginner snowboard form the brand burton. Used 5 seasons, perfect condition.",
-  value: 3,
+  value: 2,
   user: mike
 )
 
@@ -346,7 +346,7 @@ snowboard.save!
  hp = Product.new(
   name: "computer",
   description: "hp computer 2 years old,  perfect condition.",
-  value: 3,
+  value: 2,
   user: mike
 )
 
