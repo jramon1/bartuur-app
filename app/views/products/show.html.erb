@@ -1,47 +1,25 @@
 <%= render 'shared/navbars/profile_logo_chat' %>
 
 <div class="show-page" id="product-description">
-  <div class="thumbnail text-center">
-      <% if @product.photos.any? %>
-      <%= cl_image_tag( @product.photos.first.path, height:350, width:350, crop: "pad", id: "product-photo") %>
-      <% end %>
-    <div class="caption">
-      <h4><%= @product.name %></h4>
-    </div>
-    <div class="value text-center">
+  <div class="card-product">
+    <% if @product.photos.any? %>
+    <%= cl_image_tag(@product.photos.first.path, class:"product-image",  height:400, width:350, crop: "pad", id: "product-photo") %>
+    <% end %>
+    <div class="value">
      <% if @product.value == 1 %>
- <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 0 and 49€ "><%= image_tag("blocks/block_bronze.png") %></button>
+     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 0 and 49€ "><%= image_tag(("blocks/block_bronze.png"), class: "value-product") %></button>
      <% elsif @product.value == 2 %>
-     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 50 - 99€ "><%= image_tag "blocks/block_silver.png" %></button>
+     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 50 - 99€ "><%= image_tag(("blocks/block_silver.png"), class: "value-product") %></button>
      <% else %>
-     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is 100€ and more "><%= image_tag "blocks/block_gold.png" %></button>
+     <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is 100€ and more "><%= image_tag(("blocks/block_gold.png"), class: "value-product")%></button>
      <% end %>
    </div>
- </div>
-
- <div container>
-   <div row>
-     <div class="col-xs-6" id="cross-button">
-       <%= simple_form_for @appreciation_negative, url: product_appreciations_path(@product.id) do |f| %>
-       <%= f.hidden_field :liked %>
-       <%= button_tag(type: 'submit', class: "btn btn-danger smiley_options") do %>
-       <i class="fa fa-times"></i>
-       <% end %>
-       <% end %>
-     </div>
-     <div class="col-xs-6" id="check-button">
-       <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-       <%= f.hidden_field :liked %>
-       <%= button_tag(type: 'submit', class: "btn btn-primary smiley_options_po") do %>
-       <i class="fa fa-exchange"></i>
-
-       <% end %>
-       <% end %>
-     </div>
-   </div>
- </div>
+     <div class="caption">
+      <h4 class="caption-name"><%=@product.name%></h4>
+    </div>
 </div>
-
+</div>
+<%= render 'shared/footer' %>
 
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">
@@ -106,7 +84,7 @@
          </div>
        </div>
      </div>
-   <%= render 'shared/footer' %>
+     <%= render 'shared/footer' %>
    </div>
  </div>
 </div>

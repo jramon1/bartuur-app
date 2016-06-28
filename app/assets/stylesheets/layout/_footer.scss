@@ -1,8 +1,8 @@
-// Your footer style
 
 #footer {
   position: fixed;
-  height: 60px;
+  bottom:0px;
+  height: 64px;
   width:375px;
   display:flex;
   align-items: center;
@@ -14,12 +14,10 @@
   font-size: 30px;
 }
 
-.smiley-footer {
- height: 60px;
+.icon-footer {
+ height: 64px;
  margin: 0 auto;
- border-radius: 50px;
- margin-top: 40px;
- width: 60px;
+ width: 185px;
 }
 
 .fa-times{
@@ -29,30 +27,29 @@
   color:white;
 }
 
-.smiley-footer.red{
-  background-color:$red;
+.icon-footer.grey{
+  background-color:$gray;
   border-color: transparent;
   opacity:0.8;
 }
 
-.smiley-footer.red:hover:focus{
+.icon-footer.grey:hover:focus{
   opacity:1;
   outline:transparent;
 }
 
-.smiley-footer.red:hover{
+.icon-footer.grey:hover{
   opacity:1;
   outline:transparent;
 }
 
-
-.smiley-footer.green{
+.icon-footer.green{
   background-color:$green;
   border-color:transparent;
   opacity:0.8;
 }
 
-.smiley-footer.green:focus:hover{
+.icon-footer.green:focus:hover{
   outline:transparent;
   opacity: 1;
 }
