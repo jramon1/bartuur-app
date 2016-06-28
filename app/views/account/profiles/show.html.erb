@@ -1,29 +1,28 @@
 <%= render 'shared/navbars/profile_arrows' %>
 <div class="wrapper grey-background">
-  <div class="container-fluid text-center">
+  <div class="container-fluid">
     <div class="row profile-row">
       <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
         <div class="user-profile">
           <div class="user-picture">
-            <%= cl_image_tag current_user.picture, width: 150, height: 150, class:"img-circle" %>
+            <%= cl_image_tag current_user.picture, width: 80, height: 80, class:"img-circle" %>
           </div>
           <div class="user-info">
-            <%= current_user.first_name %>
-            <%= current_user.last_name %>
+            <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
           </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-4">
         <div class="profile-menu">
           <div class="boxes profile-box">
-            <h2> Profile </h2>
+            <h5> My products </h5>
           </div>
           <div class="boxes settings-box">
-            <h2> Settings </h2>
+            <h5> Settings </h5>
           </div>
           <div class="boxes logout-box">
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <h2> Log out </h2>
+            <h5> Log out </h5>
             <% end %>
           </div>
         </div>
@@ -38,8 +37,8 @@
             <div class="product-card-image">
               <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
             </div>
-            <div class="product-card-content text-center">
-              <h4 class="product-title">
+            <div class="product-card-content">
+              <h4 class="product-title text-center">
                 <%= product.name %>
               </h4>
               <p class="product-description">
@@ -64,7 +63,7 @@
             <div class="add-product-profile-content">
 
               <div class="add-product-profile-description">
-                <p>Add a product!</p>
+                <h4>Add a product!</h4>
               </div>
             </div>
             <div class="add-product-profile-image">
