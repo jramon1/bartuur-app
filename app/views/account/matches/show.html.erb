@@ -1,7 +1,7 @@
 <%= render 'shared/navbars/arrow_user_product' %>
 
 <div class="container-match-since">
-  <p>Match since <%= @match_since %></p>
+  <p>Matched since <%= @match_since %></p>
   <hr>
 </div>
 
@@ -17,9 +17,12 @@
   </p>
   <% end %>
   <% end %>
+</div>
 
+
+<div id="footer-chat">
   <%= simple_form_for [@match, @message], url: account_match_messages_path(@match) do |f| %>
-  <%= f.input :content, label: false, as: :text, input_html: {rows: 2, cols: 10} %>
+  <%= f.input :content, label: false, as: :text, input_html: {rows: 1, cols: 10} %>
   <div class="form-actions">
     <%= f.submit %>
   </div>
