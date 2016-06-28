@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :find_product, only: [:show, :show_description]
+  before_action :find_matches, only: [:show, :deckend]
 
   def deckend
   end
@@ -25,6 +26,13 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def find_matches
+    match_ids = flash[:match_ids]
+    return if match_ids.blank?
+
+    @matches = current_user.matches.where(id: match_ids)
+  end
 
   def find_product
     @product = Product.find(params[:id])

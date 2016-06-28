@@ -88,7 +88,7 @@ puts "Creating products..."
 sunglasses = Product.new(
   name: "Sunglasses",
   description: "Person 714 great condition",
-  value: 2,
+  value: 1,
   user: jesse
 )
 
@@ -140,7 +140,7 @@ rubber_duck.save!
 jacket = Product.new(
   name: "Armani Jacket",
   description: "Crocodile leather",
-  value: 2,
+  value: 1,
   user: mike
 )
 
@@ -377,52 +377,65 @@ hp.save!
 
 puts "Creating Matches..."
 
-# Jesse -- likes jurjen bike
+# # Jesse -- likes jurjen bike
+
+# appreciation1 = Appreciation.create!(
+#   liked: true,
+#   product: bike,
+#   user: jesse
+# )
+
+# # Jurjen -- likes jesse sunglasses
+
+# appreciation2 = Appreciation.create!(
+#   liked: true,
+#   product: sunglasses,
+#   user: jurjen
+# )
+
+# # Matching
+
+# Match.create!(
+#   appreciation: appreciation1,
+#   secondary_appreciation: appreciation2,
+#   code: SecureRandom.hex(3).upcase
+# )
+
+
+# # Mike -- likes jurjen bike
+
+# appreciation3 = Appreciation.create!(
+#   liked: true,
+#   product: closet,
+#   user: mike
+# )
+
+# # Jurjen -- likes mike jacket
+
+# appreciation4 = Appreciation.create!(
+#   liked: true,
+#   product: jacket,
+#   user: jurjen
+# )
+
+# # Matching
+
+# Match.create!(
+#   appreciation: appreciation3,
+#   secondary_appreciation: appreciation4,
+#   code: SecureRandom.hex(3).upcase
+# )
+
+
 
 appreciation1 = Appreciation.create!(
   liked: true,
-  product: bike,
-  user: jesse
-)
-
-# Jurjen -- likes jesse sunglasses
-
-appreciation2 = Appreciation.create!(
-  liked: true,
   product: sunglasses,
-  user: jurjen
-)
-
-# Matching
-
-Match.create!(
-  appreciation: appreciation1,
-  secondary_appreciation: appreciation2,
-  code: SecureRandom.hex(3).upcase
-)
-
-
-# Mike -- likes jurjen bike
-
-appreciation3 = Appreciation.create!(
-  liked: true,
-  product: closet,
   user: mike
 )
 
-# Jurjen -- likes mike jacket
-
-appreciation4 = Appreciation.create!(
+appreciation2 = Appreciation.create!(
   liked: true,
-  product: jacket,
-  user: jurjen
+  product: rubber_duck,
+  user: mike
 )
-
-# Matching
-
-Match.create!(
-  appreciation: appreciation3,
-  secondary_appreciation: appreciation4,
-  code: SecureRandom.hex(3).upcase
-)
-

@@ -13,9 +13,9 @@ class AppreciationsController < ApplicationController
     if @appreciation.save
       check_for_matching
 
-      if @match
-        return redirect_to account_match_path(@match)
-        flash[:match] = "Match!!"
+      if @matches.any?
+        flash[:match_ids] = @matches.map(&:id)
+        # return redirect_to account_match_path(@match)
       end
     else
       flash[:alert] = 'Oops, an error just occured!'
@@ -49,7 +49,7 @@ class AppreciationsController < ApplicationController
     return if @matching_appreciations.empty?
 
     # Creating the Matches
-    @matching_appreciations.each do |matching_appreciation|
+    @matches = @matching_appreciations.map do |matching_appreciation|
       Match.create!(
         appreciation:           @appreciation,
         secondary_appreciation: matching_appreciation,
