@@ -1,12 +1,14 @@
 <%= render 'shared/navbars/arrow_chat' %>
 
-<div class="matches-container">
-  <% if @matches.any? %>
-    <% @matches.each do |match| %>
-    <%= render 'match', match: match, product: match_product(match), other_product: match_other_product(match) %>
-    <hr>
+<div class="wrapper grey-background">
+  <div class="matches-container">
+    <% if @matches.any? %>
+      <% @matches.each do |match| %>
+      <%= render 'match', match: match, product: match_product(match), other_product: match_other_product(match) %>
+      <hr>
+      <% end %>
+    <% else %>
+      <p class="no-matches">You don't have any matches yet...</p>
     <% end %>
-  <% else %>
-    <p class="no-matches">You don't have any matches yet...</p>
-  <% end %>
+  </div>
 </div>
