@@ -2,8 +2,6 @@ class Account::ProfilesController < ApplicationController
 
   def show
     @products = current_user.products.all
-   # flash[:match] = "this"
-
   end
 
   def edit
@@ -15,8 +13,7 @@ class Account::ProfilesController < ApplicationController
     else
       flash[:notice] = "Profile not updated, please try again."
       render :show
-  end
-
+    end
   end
 
   private
@@ -24,5 +21,4 @@ class Account::ProfilesController < ApplicationController
   def profile_params
     params.require(:user).permit(:street, :zip_code, :city, :distance_radius)
   end
-
 end
