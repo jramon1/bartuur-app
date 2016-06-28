@@ -93,7 +93,7 @@
         <div class="user-photo">
           <%= cl_image_tag @user.picture, class:"avatar-large" %>
           <div class="user-extra-info">
-            <p>
+            <p class="user-extra-info">
               <%=@user.first_name %>
               <%=@user.last_name%>
             </p>
@@ -106,8 +106,8 @@
          </div>
        </div>
      </div>
-   </div>
    <%= render 'shared/footer' %>
+   </div>
  </div>
 </div>
 

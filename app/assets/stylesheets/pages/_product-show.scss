@@ -89,8 +89,9 @@
 }
 
 .product-container{
-  width: 350px;
+  width: 375px;
   margin: 0 auto;
+  position:absolute;
 }
 
 .product-name {
@@ -99,10 +100,12 @@
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: -30px;
+  position:relative;
 }
 
 .product-description{
   margin-bottom: 40px;
+  position:relative;
 }
 
 .extra-info{
@@ -118,16 +121,16 @@
 
 .user-extra-info{
   position:relative;
-  left: 115px;
-  bottom: 70px;
+  left: 85px;
+  bottom: 42px;
   font-weight: bold;
-  color: $gray;
+  color: $dark-gray;
 }
 
 .friends_count{
   position:relative;
-  left:115px;
-  bottom: 75px;
+  left:166px;
+  bottom: 83px;
   color:$gray;
 }
 
@@ -138,7 +141,7 @@
 
 .successfull_trade{
   position:relative;
-  left:115px;
+  left:166px;
   bottom: 75px;
   color:$gray;
 }
