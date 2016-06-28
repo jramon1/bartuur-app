@@ -1,9 +1,9 @@
 .product-flex {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // flex-direction: column;
   position: relative;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
 }
 
 .product-card {
@@ -61,8 +61,8 @@
 }
 
 .product-card-extra {
-bottom: 120px;
-    left: 105px;
+top: 250px;
+    left: 350px;
     background-color: #ededed;
     border-radius: 50%;
     padding: 8px;
