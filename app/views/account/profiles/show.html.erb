@@ -36,13 +36,13 @@
           <div class="product-card">
             <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
-              <%= cl_image_tag product.photos.first.path, width: 250, height: 250  %>
+              <%= cl_image_tag product.photos.first.path, width: 325, height: 250  %>
             </div>
             <div class="product-card-content text-center">
               <h4 class="product-title">
                 <%= product.name %>
               </h4>
-              <p class="product-description">
+              <p class="product-description text-left">
                 <%= product.description %>
               </p>
             </div>
