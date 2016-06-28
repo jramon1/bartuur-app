@@ -379,19 +379,19 @@ puts "Creating Matches..."
 
 # # Jesse -- likes jurjen bike
 
-# appreciation1 = Appreciation.create!(
-#   liked: true,
-#   product: bike,
-#   user: jesse
-# )
+appreciation1 = Appreciation.create!(
+  liked: true,
+  product: bike,
+  user: jesse
+)
 
 # # Jurjen -- likes jesse sunglasses
 
-# appreciation2 = Appreciation.create!(
-#   liked: true,
-#   product: sunglasses,
-#   user: jurjen
-# )
+appreciation2 = Appreciation.create!(
+  liked: true,
+  product: sunglasses,
+  user: jurjen
+)
 
 # # Matching
 
@@ -439,3 +439,4 @@ appreciation2 = Appreciation.create!(
   product: rubber_duck,
   user: mike
 )
+#
