@@ -71,6 +71,7 @@
   color: $brand-color;
 }
 
+
 .no-matches {
   text-align: center;
   padding-top: 25px;
@@ -78,4 +79,12 @@
 }
 
 
+.match-title {
+  font-family: $logo-font;
+  color: $brand-color;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -30px;
+}
 

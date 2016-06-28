@@ -2,7 +2,7 @@ class Account::ProfilesController < ApplicationController
 
   def show
     @products = current_user.products.all
-   # flash[:match] = "this"
+    flash[:match] = "this"
 
   end
 
