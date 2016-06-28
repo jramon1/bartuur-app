@@ -1,6 +1,7 @@
 .card-product {
   display: block;
-  padding: 1px;
+  margin-left-left: 4px;
+  margin-left-right: 4px;
   margin-bottom: 22px;
   border:0px solid;
   position:relative;
@@ -11,8 +12,9 @@
 }
 
 .product-image{
-position:relative;
-top:-35px;
+  position:relative;
+  top:-35px;
+  padding: 5px;
 }
 
 .value{
@@ -55,11 +57,6 @@ top:-35px;
   margin-top: 10px;
 }
 
-.display-flexible {
-  display: flex;
-  justify-items: center;
-  justify-content: space-around;
-}
 
 .align-smiley {
   margin-bottom: 20px;
@@ -68,12 +65,39 @@ top:-35px;
 
 .carousel-container{
   width: 350px;
-  height:350px;
+  height:500px;
   margin: 0 auto;
   margin-top:10px;
+  margin-bottom:10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding: 5px;
+}
 
+.card-show-description{
+position:relative;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height:350px;
+  line-height: 1;
+}
+
+#go-back{
+  position:absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 30px;
+  opacity: 0.7;
+  color: $green;
+  cursor: pointer;
+}
+
+#go-back:hover{
+  opacity:1;
+  font-size:30px
 }
 
 .carousel-control{
@@ -109,7 +133,7 @@ top:-35px;
   width: 12px;
   height: 12px;
   background-color: $green;
-  margin-bottom: -30px;
+  margin-bottom: 80px;
 }
 
 .carousel-indicators li {
@@ -131,44 +155,46 @@ top:-35px;
 .product-container{
   width: 375px;
   margin: 0 auto;
-  position:absolute;
+  position:relative;
 }
 
 .product-name {
   color: $dark-gray;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
-  margin-top: -30px;
-  position:relative;
+  position:absolute;
+  top: 300px;
+  left: 20px;
 }
 
 .product-description{
+  position:absolute;
   margin-bottom: 5px;
-  position:relative;
 }
 
 .extra-info{
   position: absolute;
-  margin-top: 10px;
+  margin-top: 465px;
 }
 
 .user-photo{
-  position:relative;
+  position:absolute;
   left: 10px;
   bottom: 10px;
 }
 
-.user-extra-info{
-  position:relative;
+p.user-extra-info{
+  position:absolute;
   left: 85px;
   bottom: 42px;
   font-weight: bold;
   color: $dark-gray;
+  font-size:14px;
+  width:200px;
 }
 
 .friends_count{
-  position:relative;
+  position:absolute;
   left:166px;
   bottom: 83px;
   color:$gray;
@@ -180,27 +206,13 @@ top:-35px;
 }
 
 .successfull_trade{
-  position:relative;
+  position:absolute;
   left:166px;
   bottom: 75px;
   color:$gray;
 }
 
-#go-back{
-  position:relative;
-  right: 150px;
-  bottom: 250px;
-  z-index: 500;
-  font-size: 40px;
-  opacity: 0.7;
-  color: $green;
-  cursor: pointer;
-}
 
-#go-back:hover{
-  opacity:1;
-  font-size:41px
-}
 
 .smiley_options {
   height: 60px;

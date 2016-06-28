@@ -23,15 +23,13 @@
 
 <!-- Mike's work product description -->
 <div class="carousel-container" type="button" id="carousel-container">
+<div class="card-show-description">
   <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators text-center">
       <% @product.photos.each_with_index do |photo, index| %>
       <li data-target="#carousel-example-generic" data-slide-to="<%=index %>"" class="active"></li>
       <%end  %>
-      <div id="go-back">
-        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-      </div>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -42,11 +40,21 @@
         <%else  %>
         <div class="item">
           <%end  %>
-          <%= cl_image_tag photo.path, height:350, width:350, crop: "pad" %>
-          <div class="carousel-caption">
-          </div>
+          <%= cl_image_tag photo.path, height:350, width:350, crop: "pad", class:"product-image" %>
         </div>
         <%end  %>
+      <div id="go-back">
+        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+      </div>
+         <div class="value">
+          <% if @product.value == 1 %>
+          <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 0 and 49€ "><%= image_tag(("blocks/block_bronze.png"), class: "value-product") %></button>
+          <% elsif @product.value == 2 %>
+          <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is between 50 - 99€ "><%= image_tag(("blocks/block_silver.png"), class: "value-product") %></button>
+          <% else %>
+          <button type="button" class= "value" data-container="body" data-toggle="popover" data-placement="bottom" data-content="The value of this product is 100€ and more "><%= image_tag(("blocks/block_gold.png"), class: "value-product")%></button>
+          <% end %>
+        </div>
       </div>
 
       <!-- Controls -->
@@ -59,6 +67,7 @@
         <span class="sr-only"></span>
       </a>
     </div>
+    </div>
 
     <div class="product-container">
       <div class="product-name">
@@ -67,13 +76,14 @@
       <div class="product-description">
         <%=@product.description %>
       </div>
+      <br></br>
       <div class="extra-info">
         <div class="user-photo">
           <%= cl_image_tag @user.picture, class:"avatar-large" %>
-          <div class="user-extra-info">
-            <p class="user-extra-info">
+          <div class="user-extra-info text-inline">
+            <p class="user-extra-info text-inline">
               <%=@user.first_name %>
-              <%=@user.last_name%>
+              <%=@user.last_name %>
             </p>
           </div>
           <div class="friends_count">
@@ -84,7 +94,6 @@
          </div>
        </div>
      </div>
-     <%= render 'shared/footer' %>
    </div>
  </div>
 </div>

@@ -1,12 +1,13 @@
 
 #footer {
+  display: block;
   position: fixed;
   bottom:0px;
   height: 64px;
-  width:375px;
+  width:100%;
   display:flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background-color: transparent;
 }
 
