@@ -1,7 +1,5 @@
+<%= render 'shared/navbars/profile_logo_chat' %>
 <div class="carousel-container" type="button" id="carousel-container">
-  <div id="go-back">
-    <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
-  </div>
   <div class="card-show-description">
     <div id="carousel-example-generic" class="carousel slide product-description" data-ride="carousel">
       <!-- Indicators -->
@@ -50,7 +48,7 @@
           <%=@product.name %>
         </div>
         <div class="product-distance">
-          <% unless @distance.nan? %>
+          <% if @distance && !@distance.nan? %>
           <%= @distance.to_i %> km away
           <% end %>
         </div>

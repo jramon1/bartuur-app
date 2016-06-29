@@ -74,7 +74,7 @@
           <%=@product.name %>
         </div>
         <div class="product-distance">
-          <% unless @distance.nan? %>
+          <% if @distance && !@distance.nan? %>
           <%= @distance.to_i %> km away
           <% end %>
         </div>
