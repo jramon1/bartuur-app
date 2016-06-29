@@ -88,7 +88,7 @@ puts "Creating products..."
 sunglasses = Product.new(
   name: "Sunglasses",
   description: "Person 714 great condition",
-  value: 1,
+  value: 2,
   user: jesse
 )
 
@@ -140,7 +140,7 @@ rubber_duck.save!
 jacket = Product.new(
   name: "Armani Jacket",
   description: "Crocodile leather",
-  value: 1,
+  value: 2,
   user: mike
 )
 
@@ -266,7 +266,7 @@ guitar.save!
 # Mike -- raiban
 
 rayban = Product.new(
-  name: "Raiban",
+  name: "Rayban",
   description: "Brand new raiban never used.",
   value: 2,
   user: mike
@@ -393,50 +393,37 @@ appreciation2 = Appreciation.create!(
   user: jurjen
 )
 
-# # Matching
+# Matching
 
-# Match.create!(
-#   appreciation: appreciation1,
-#   secondary_appreciation: appreciation2,
-#   code: SecureRandom.hex(3).upcase
-# )
-
-
-# # Mike -- likes jurjen bike
-
-# appreciation3 = Appreciation.create!(
-#   liked: true,
-#   product: closet,
-#   user: mike
-# )
-
-# # Jurjen -- likes mike jacket
-
-# appreciation4 = Appreciation.create!(
-#   liked: true,
-#   product: jacket,
-#   user: jurjen
-# )
-
-# # Matching
-
-# Match.create!(
-#   appreciation: appreciation3,
-#   secondary_appreciation: appreciation4,
-#   code: SecureRandom.hex(3).upcase
-# )
+Match.create!(
+  appreciation: appreciation1,
+  secondary_appreciation: appreciation2,
+  code: SecureRandom.hex(3).upcase
+)
 
 
+# Mike -- likes jurjen bike
 
-appreciation1 = Appreciation.create!(
+appreciation3 = Appreciation.create!(
   liked: true,
-  product: sunglasses,
+  product: closet,
   user: mike
 )
 
-appreciation2 = Appreciation.create!(
+# Jurjen -- likes mike jacket
+
+appreciation4 = Appreciation.create!(
   liked: true,
-  product: rubber_duck,
-  user: mike
+  product: jacket,
+  user: jurjen
 )
-#
+
+# Matching
+
+Match.create!(
+  appreciation: appreciation3,
+  secondary_appreciation: appreciation4,
+  code: SecureRandom.hex(3).upcase
+)
+
+
