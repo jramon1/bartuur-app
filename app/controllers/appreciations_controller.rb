@@ -13,7 +13,7 @@ class AppreciationsController < ApplicationController
     if @appreciation.save
       check_for_matching
 
-      if @matches.any?
+      if @matches && @matches.any?
         flash[:match_ids] = @matches.map(&:id)
         # return redirect_to account_match_path(@match)
       end

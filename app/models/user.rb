@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     @city = self.city
     @street = self.street
     @zip_code = self.zip_code
-    return @street + " " + @city + " " + @zip_code
+    return "#{@street} #{@city} #{@zip_code}".strip
   end
 
   def full_address_changed?
