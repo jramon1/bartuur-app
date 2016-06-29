@@ -2,25 +2,25 @@
   display: block;
   margin-left-left: 4px;
   margin-left-right: 4px;
-  margin-bottom: 22px;
+  margin-top: 10px;
   border:0px solid;
   position:relative;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   max-width: 350px;
-  overflow:hidden;
+  height:380px;
+  overflow: hidden;
 }
 
 .product-image{
-  position:relative;
-  top:-35px;
+  margin-top: 5px;
   padding: 5px;
 }
 
 .value{
   position:absolute;
-  right: 5px;
-  bottom: 52px;
+  right: 6px;
+  bottom: 32px;
   background-color: white;
   border-radius: 50px;
   padding: 4px;
@@ -29,7 +29,7 @@
 
 .value-product{
   height:34px;
-  width:34px;
+  width: 34px;
 }
 
 .value:focus {
@@ -41,12 +41,13 @@
   position:absolute;
   text-align:left;
   left:10px;
-  bottom: 25px;
+  bottom: 15px;
 }
 
 .caption-name{
   font-size:20px;
   color:$dark-gray;
+
 }
 
 .show-page {
@@ -65,34 +66,36 @@
 
 .carousel-container{
   width: 350px;
-  height:500px;
+  height:553px;
   margin: 0 auto;
   margin-top:10px;
-  margin-bottom:10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   padding: 5px;
+  margin-bottom:80px;
 }
 
 .card-show-description{
-position:relative;
+  position:relative;
+  margin-top: 10px;
 }
 
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height:350px;
+  height:370px;
   line-height: 1;
 }
 
 #go-back{
   position:absolute;
-  left: 10px;
-  top: 0px;
+  margin-left: 10px;
+  margin-top: 5px;
   font-size: 30px;
   opacity: 0.7;
   color: $green;
   cursor: pointer;
+  z-index:500;
 }
 
 #go-back:hover{
@@ -133,7 +136,7 @@ position:relative;
   width: 12px;
   height: 12px;
   background-color: $green;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .carousel-indicators li {
@@ -152,127 +155,88 @@ position:relative;
   background-image: none;
 }
 
-.product-container{
-  width: 375px;
-  margin: 0 auto;
+
+.wrapper-product{
   position:relative;
+}
+
+.product-container{
+ width: 350px;
+ height: 250px;
+ margin: 0 auto;
+ position: absolute;
+ top: -45px;
+ left: 0px;
 }
 
 .product-name {
   color: $dark-gray;
   font-size: 20px;
   font-weight: bold;
-  position:absolute;
-  top: 300px;
-  left: 20px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
 
-.product-description{
-  position:absolute;
-  margin-bottom: 5px;
-}
-
-.extra-info{
+.product-distance{
   position: absolute;
-  margin-top: 465px;
+  left: 15px;
+  top: 35px;
+  color: gray;
+  font-size: 12px;
+}
+
+.product-show-description{
+  margin-left: 15px;
+  margin-bottom:60px;
+  margin-top: 25px;
+}
+
+.separation{
+ border-bottom: 0.5px solid rgba(0, 0, 0, 0.09) !important;
+ width: 280px;
+ margin: auto;
+ margin-bottom: 5px;
+}
+.extra-info{
+  position:absolute;
+  width:270px;
 }
 
 .user-photo{
-  position:absolute;
-  left: 10px;
-  bottom: 10px;
+ position: absolute;
+ margin-left: 10px;
+ margin-bottom: 10px;
+ margin-top: 10px;
 }
 
-p.user-extra-info{
-  position:absolute;
-  left: 85px;
-  bottom: 42px;
-  font-weight: bold;
-  color: $dark-gray;
-  font-size:14px;
-  width:200px;
+.user-extra-info{
+ position: absolute;
+ left: 35px;
+ top: 5px;
+ font-weight: bold;
+ color: #4B4E59;
+ font-size: 14px;
+ width:100px;
 }
 
 .friends_count{
-  position:absolute;
-  left:166px;
-  bottom: 83px;
-  color:$gray;
-}
-
-.fa-user:before {
-  content: "\f007";
-  padding-right: 11px;
+  position: absolute;
+  left: 68px;
+  top: 30px;
+  color: #A9A9A9;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .successfull_trade{
-  position:absolute;
-  left:166px;
-  bottom: 75px;
-  color:$gray;
+  position: absolute;
+  left: 135px;
+  top: 30px;
+  color: #A9A9A9;
+  font-weight: 400;
+  font-size: 12px;
 }
-
-
-
-.smiley_options {
-  height: 60px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 50px;
-  margin-top: 40px;
-  display: flex;
-  width: 60px;
-  justify-content: space-around;
-}
-
-.smiley_options_po {
-  height: 60px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 50px;
-  margin-top: 40px;
-  display: flex;
-  width: 60px;
-  justify-content: space-around;
-}
-
-.smiley_options_po:focus {
-  outline:transparent;
-}
-
-.smiley_options:focus {
-  outline:transparent;
-}
-
-
-.btn:active:focus{
-  outline:transparent;
-}
-
-.fa-exchange{
-  font-size:30px;
-}
-
-.fa-times{
-  font-size:30px;
-}
-
-#cross-button{
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-top:-20px;
-}
-#check-button{
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-top:-20px;
-
-}
-
 
 .glyphicon-chevron-left:before {
   content: "\e079";
