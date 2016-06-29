@@ -45,6 +45,7 @@
                 <%= product.description %>
               </p>
             </div>
+            <div class="product-card-extra-parent">
             <div class="product-card-extra">
               <% if product.value == 1 %>
               <%= image_tag "blocks/block_bronze.png" %>
@@ -53,6 +54,7 @@
               <% else %>
               <%= image_tag "blocks/block_gold.png" %>
               <% end %>
+            </div>
             </div>
             <%end%>
             <%end%>
