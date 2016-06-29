@@ -35,7 +35,7 @@
           <div class="product-card">
             <%= link_to edit_account_product_path(product), class: "product-flex" do%>
             <div class="product-card-image">
-              <%= cl_image_tag product.photos.first.path, width: 325, height: 250  %>
+              <%= cl_image_tag product.photos.first.path, width: 325, height: 250, crop: "pad"  %>
             </div>
             <div class="product-card-content">
               <h4 class="product-title text-center">
@@ -45,14 +45,20 @@
                 <%= product.description %>
               </p>
             </div>
-            <div class="product-card-extra">
-              <% if product.value == 1 %>
-              <%= image_tag "blocks/block_bronze.png" %>
-              <% elsif product.value == 2 %>
-              <%= image_tag "blocks/block_silver.png" %>
-              <% else %>
-              <%= image_tag "blocks/block_gold.png" %>
-              <% end %>
+            <div class="product-card-extra-parent">
+              <div class="filler"></div>
+              <div class="product-card-extra-content">
+                <p>Edit</p>
+              </div>
+              <div class="product-card-extra">
+                <% if product.value == 1 %>
+                <%= image_tag "blocks/block_bronze.png" %>
+                <% elsif product.value == 2 %>
+                <%= image_tag "blocks/block_silver.png" %>
+                <% else %>
+                <%= image_tag "blocks/block_gold.png" %>
+                <% end %>
+              </div>
             </div>
             <%end%>
             <%end%>

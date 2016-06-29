@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def next_product
     # Find nearby other users based on our distance radius
-    if current_user.distance_radius.present?
+    if current_user.distance_radius.present? && current_user.full_address.present?
       @nearby_user_ids = User.near(current_user.full_address, current_user.distance_radius, units: :km).map(&:id)
     end
 

@@ -1,4 +1,3 @@
-
 puts "Cleaning up database..."
 
 Match.destroy_all
@@ -88,7 +87,7 @@ puts "Creating products..."
 sunglasses = Product.new(
   name: "Sunglasses",
   description: "Person 714 great condition",
-  value: 1,
+  value: 2,
   user: jesse
 )
 
@@ -140,7 +139,7 @@ rubber_duck.save!
 jacket = Product.new(
   name: "Armani Jacket",
   description: "Crocodile leather",
-  value: 1,
+  value: 2,
   user: mike
 )
 
@@ -266,7 +265,7 @@ guitar.save!
 # Mike -- raiban
 
 rayban = Product.new(
-  name: "Raiban",
+  name: "Rayban",
   description: "Brand new raiban never used.",
   value: 2,
   user: mike
@@ -425,18 +424,3 @@ Match.create!(
   secondary_appreciation: appreciation4,
   code: SecureRandom.hex(3).upcase
 )
-
-
-
-appreciation1 = Appreciation.create!(
-  liked: true,
-  product: sunglasses,
-  user: mike
-)
-
-appreciation2 = Appreciation.create!(
-  liked: true,
-  product: rubber_duck,
-  user: mike
-)
-#
