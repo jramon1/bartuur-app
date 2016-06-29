@@ -65,9 +65,9 @@ jurjen = User.create!(
   password_confirmation: "12345678",
   first_name: "Jurjen",
   last_name: "Munneke",
-  street: "trosdravik 91",
-  zip_code: "8935",
-  city: "Leeuwarden",
+  street: "Admiraal de Ruijterweg 296-2",
+  zip_code: "1055MS",
+  city: "Amsterdam",
   provider: "facebook",
   uid: "1125025977540342",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12301502_1008253785884229_2873181151236248682_n.jpg?oh=5c45f0c66aa76dd933f4a7eba4fef69a&oe=57E44838",
@@ -393,38 +393,38 @@ appreciation2 = Appreciation.create!(
   user: jurjen
 )
 
-# # Matching
+# Matching
 
-# Match.create!(
-#   appreciation: appreciation1,
-#   secondary_appreciation: appreciation2,
-#   code: SecureRandom.hex(3).upcase
-# )
+Match.create!(
+  appreciation: appreciation1,
+  secondary_appreciation: appreciation2,
+  code: SecureRandom.hex(3).upcase
+)
 
 
-# # Mike -- likes jurjen bike
+# Mike -- likes jurjen bike
 
-# appreciation3 = Appreciation.create!(
-#   liked: true,
-#   product: closet,
-#   user: mike
-# )
+appreciation3 = Appreciation.create!(
+  liked: true,
+  product: closet,
+  user: mike
+)
 
-# # Jurjen -- likes mike jacket
+# Jurjen -- likes mike jacket
 
-# appreciation4 = Appreciation.create!(
-#   liked: true,
-#   product: jacket,
-#   user: jurjen
-# )
+appreciation4 = Appreciation.create!(
+  liked: true,
+  product: jacket,
+  user: jurjen
+)
 
-# # Matching
+# Matching
 
-# Match.create!(
-#   appreciation: appreciation3,
-#   secondary_appreciation: appreciation4,
-#   code: SecureRandom.hex(3).upcase
-# )
+Match.create!(
+  appreciation: appreciation3,
+  secondary_appreciation: appreciation4,
+  code: SecureRandom.hex(3).upcase
+)
 
 
 
