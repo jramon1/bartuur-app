@@ -46,15 +46,19 @@
               </p>
             </div>
             <div class="product-card-extra-parent">
-            <div class="product-card-extra">
-              <% if product.value == 1 %>
-              <%= image_tag "blocks/block_bronze.png" %>
-              <% elsif product.value == 2 %>
-              <%= image_tag "blocks/block_silver.png" %>
-              <% else %>
-              <%= image_tag "blocks/block_gold.png" %>
-              <% end %>
-            </div>
+              <div class="filler"></div>
+              <div class="product-card-extra-content">
+                <p>Edit</p>
+              </div>
+              <div class="product-card-extra">
+                <% if product.value == 1 %>
+                <%= image_tag "blocks/block_bronze.png" %>
+                <% elsif product.value == 2 %>
+                <%= image_tag "blocks/block_silver.png" %>
+                <% else %>
+                <%= image_tag "blocks/block_gold.png" %>
+                <% end %>
+              </div>
             </div>
             <%end%>
             <%end%>
