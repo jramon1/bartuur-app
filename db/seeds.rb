@@ -77,19 +77,19 @@ jurjen = User.create!(
 puts "Creating products..."
 
 
-# Mike -- computer
+# Mike -- hometrainer
 
- hp = Product.new(
-  name: "computer",
-  description: "hp computer 2 years old,  perfect condition.",
+hometrainer = Product.new(
+  name: "Hometrainer",
+  description: "It was in my home for two years but never used it. In perfect condition!",
   value: 2,
   user: mike
 )
 
-["HP.jpg", "hpphotoback.jpg" ].each do |filename|
-  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/#{filename}"))
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/hometrainer/#{filename}"))
 
-  hp.photos << Attachinary::File.new({
+  hometrainer.photos << Attachinary::File.new({
     version:               photo["version"],
     public_id:             photo["public_id"],
     resource_type:         "image",
@@ -102,7 +102,35 @@ puts "Creating products..."
   })
 end
 
-hp.save!
+hometrainer.save!
+
+
+# Mike -- suitcase
+
+suitcase = Product.new(
+  name: "Samsonite suitcase",
+  description: "Not damaged at all, lock is also still working.",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/suitcase/#{filename}"))
+
+  suitcase.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+suitcase.save!
 
 
 ##################################################
