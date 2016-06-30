@@ -13,12 +13,13 @@
   overflow: hidden;
   background-color: white;
   border-radius: 5px;
-width: 100%;
+  width: 100%;
 }
 
 .product-swipe-image{
   padding-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.09) !important;
+  max-height: 300px;
 }
 
 .product-swipe-image img {
@@ -282,5 +283,9 @@ flex: 0 0 23%;
   color: white;
 }
 
+.white-space{
+height:30px;
+background-color:#F9F9F9;
+}
 
 
