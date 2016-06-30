@@ -77,19 +77,19 @@ jurjen = User.create!(
 puts "Creating products..."
 
 
-# Mike -- hometrainer
+# Mike -- tent
 
-hometrainer = Product.new(
-  name: "Hometrainer",
-  description: "It was in my home for two years but never used it. In perfect condition!",
+tent = Product.new(
+  name: "Elephant tent",
+  description: "In great condition. Fun for all.",
   value: 2,
   user: mike
 )
 
-["1.JPG", "2.JPG", "3.JPG"].each do |filename|
-  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/hometrainer/#{filename}"))
+["1.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/tent/#{filename}"))
 
-  hometrainer.photos << Attachinary::File.new({
+  tent.photos << Attachinary::File.new({
     version:               photo["version"],
     public_id:             photo["public_id"],
     resource_type:         "image",
@@ -102,22 +102,22 @@ hometrainer = Product.new(
   })
 end
 
-hometrainer.save!
+tent.save!
 
 
-# Mike -- suitcase
+# Mike -- bike
 
-suitcase = Product.new(
-  name: "Samsonite suitcase",
-  description: "Not damaged at all, lock is also still working.",
+bike = Product.new(
+  name: "Altec bike",
+  description: "Only used it for a couple of months, while I did a coding bootcamp at Le Wagon.",
   value: 2,
   user: mike
 )
 
 ["1.JPG", "2.JPG", "3.JPG"].each do |filename|
-  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/suitcase/#{filename}"))
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/bike/#{filename}"))
 
-  suitcase.photos << Attachinary::File.new({
+  bike.photos << Attachinary::File.new({
     version:               photo["version"],
     public_id:             photo["public_id"],
     resource_type:         "image",
@@ -130,8 +130,175 @@ suitcase = Product.new(
   })
 end
 
-suitcase.save!
+bike.save!
 
+
+# Mike -- harmonica
+
+harmonica = Product.new(
+  name: "Hohner Super 64 Harmonica",
+  description: "Tried to play this work of art, but never managed.",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/harmonica/#{filename}"))
+
+  harmonica.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+harmonica.save!
+
+
+# Mike -- playstation
+
+playstation = Product.new(
+  name: "Playstation 3",
+  description: "Owned it for the past 3 years. Still works perfectly.",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/playstation/#{filename}"))
+
+  playstation.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+playstation.save!
+
+
+# Mike -- pingpong table
+
+pingpong_table = Product.new(
+  name: "PingPong table",
+  description: "Had a lot of fun with this table. In perfect condition!",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG", "3.JPG", "4.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/pingpong_table/#{filename}"))
+
+  pingpong_table.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+pingpong_table.save!
+
+
+# Mike -- carpet
+
+carpet = Product.new(
+  name: "Persian carpet",
+  description: "Length: 190cm, width: 135cm.",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/carpet/#{filename}"))
+
+  carpet.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+carpet.save!
+
+
+# Mike -- scuba gear
+
+scuba_gear = Product.new(
+  name: "Professional scuba gear",
+  description: "I've seen sharks through these goggles! Still in great condition.",
+  value: 2,
+  user: mike
+)
+
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/scuba_gear/#{filename}"))
+
+  scuba_gear.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+scuba_gear.save!
+
+
+# Jurjen -- vinyl
+
+vinyl = Product.new(
+  name: "J.J. Cale - the Troubadour",
+  description: "Original vinyl press from the 80's.",
+  value: 2,
+  user: jurjen
+)
+
+["1.JPG", "2.JPG"].each do |filename|
+  photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/vinyl/#{filename}"))
+
+  vinyl.photos << Attachinary::File.new({
+    version:               photo["version"],
+    public_id:             photo["public_id"],
+    resource_type:         "image",
+    attachinariable_type:  "Product",
+    scope:                 "photos",
+    width:                 photo["width"],
+    height:                photo["height"],
+    pic_name:              photo["original_filename"],
+    format:                "jpg"
+  })
+end
+
+vinyl.save!
 
 ##################################################
 #
