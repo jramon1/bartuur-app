@@ -21,8 +21,6 @@ jesse = User.create!(
   street: "Nassaukade 307",
   zip_code: "1053LP",
   city: "Amsterdam",
-  provider: "facebook",
-  uid: "1191239214222307",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/13133237_1164443516901877_3662997524109057160_n.jpg?oh=33ff947dc09e1129091369ba96885d0d&oe=57DD8215",
   friends_count: (100..600).to_a.sample,
   distance_radius: 5
@@ -37,8 +35,6 @@ mike = User.create!(
   street: "Nassaukade 307",
   zip_code: "1053LP",
   city: "Amsterdam",
-  provider: "facebook",
-  uid: "10153717178497602",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12794386_10153463337262602_6946293271583260974_n.jpg?oh=110e79e196e1b7c6bf656aa4360f6eb3&oe=57D3D1D3",
   friends_count: (100..600).to_a.sample,
   distance_radius: 10
@@ -59,7 +55,7 @@ walter = User.create!(
 )
 
 jurjen = User.create!(
-  email: "jurjen@munneke.com",
+  email: "jurjenmunneke@me.com",
   password: "12345678",
   password_confirmation: "12345678",
   first_name: "Jurjen",
@@ -67,8 +63,6 @@ jurjen = User.create!(
   street: "Admiraal de Ruijterweg 296-2",
   zip_code: "1055MS",
   city: "Amsterdam",
-  provider: "facebook",
-  uid: "1125025977540342",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/12301502_1008253785884229_2873181151236248682_n.jpg?oh=5c45f0c66aa76dd933f4a7eba4fef69a&oe=57E44838",
   friends_count: (100..600).to_a.sample,
   distance_radius: 50
