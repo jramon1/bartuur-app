@@ -1,5 +1,6 @@
 
 #footer {
+  position:fixed;
   display: block;
   bottom:0px;
   height: 64px;
@@ -17,7 +18,7 @@
 .icon-footer {
  height: 64px;
  margin: 0 auto;
- width: 175px;
+ width: 174px;
 }
 
 .fa-times{
@@ -31,6 +32,7 @@
   background-color:$gray;
   border-color: transparent;
   opacity:0.8;
+  margin-right: 1px;
 }
 
 .icon-footer.grey:hover:focus{
@@ -47,6 +49,7 @@
   background-color:$green;
   border-color:transparent;
   opacity:0.8;
+  margin-left: 1px;
 }
 
 .icon-footer.green:focus:hover{

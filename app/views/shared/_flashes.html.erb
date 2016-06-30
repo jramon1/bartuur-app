@@ -1,44 +1,40 @@
 <div id="flashes">
-<% if notice %>
+  <% if notice %>
   <div class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= notice %>
   </div>
-<% end %>
-<% if alert %>
+  <% end %>
+  <% if alert %>
   <div class="alert alert-warning alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= alert %>
   </div>
-<% end %>
+  <% end %>
 </div>
 
 <% if flash[:match_ids] %>
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="mymodal">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">l
-    <!-- style match here -->
+      <!-- style match here -->
       <div class="home-page">
         <h1 class="match-title">
           <% if @matches.count == 1 %>
-            You got a match!
+          You got a match!
           <% else %>
-            You got matches!
+          You got matches!
           <% end %>
         </h1>
       </div>
-            <% @matches.each do |match| %>
-              <%= render 'account/matches/match', match: match, product: match_product(match), other_product: match_other_product(match) %>
-            <% end %>
-         <button type="button" class="btn btn-default btn-lg" disabled="disabled">Keep on Bartuuring!</button>
-
-
-
-
-
-
+      <% @matches.each do |match| %>
+      <%= render 'account/matches/match', match: match, product: match_product(match), other_product: match_other_product(match) %>
+      <% end %>
+      <%=link_to root_path do%>
+      <button type="button" class="btn btn-default btn-lg", >Keep on Bartuuring!</button>
+      <%end  %>
     </div>
   </div>
 </div>
-  </div>
+</div>
 <% end %>
