@@ -25,18 +25,25 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_facebook_oauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]  # Fake password for validation
-      user.first_name = auth.info.first_name
-      user.last_name = auth.info.last_name
-      user.picture = auth.info.image
-      # user.friends_count = auth.extra.raw_info.friends.summary.total_count
-      user.token = auth.credentials.token
-      user.token_expiry = Time.at(auth.credentials.expires_at)
+    user = find_by_email(auth.info.email)
+
+    unless user
+      user = where(provider: auth.provider, uid: auth.uid).first_or_initialize
     end
+
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0,20]  # Fake password for validation
+    user.first_name = auth.info.first_name
+    user.last_name = auth.info.last_name
+    user.picture = auth.info.image
+    # user.friends_count = auth.extra.raw_info.friends.summary.total_count
+    user.token = auth.credentials.token
+    user.token_expiry = Time.at(auth.credentials.expires_at)
+
+    user.save
+    return user
   end
 
   def matches
