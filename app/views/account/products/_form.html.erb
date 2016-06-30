@@ -27,7 +27,7 @@
       </tr>
     </table>
   </div>
-  <%= f.select :value, ([['Bronze', 1], ['Silver', 2], ['Gold', 3]]), required: false, include_blank: false  %>
+  <%= f.select :value, [['Bronze', 1], ['Silver', 2], ['Gold', 3]], {required: false, include_blank: false}, { :class => 'btn btn-primary' } %>
 </div>
 
 <div class="form-actions">

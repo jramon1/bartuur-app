@@ -13,11 +13,18 @@ align-items: center;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   margin-bottom: 45px;
   border-radius: 5px;
+  max-width: 350px;
+
 }
 
 .product-card a {
   color: #333;
   text-decoration: none;
+}
+
+.add-product {
+max-width: 350px;
+
 }
 
 .add-product-profile-description {
@@ -110,8 +117,9 @@ align-items: center;
   padding-top: 20px;
   display: flex;
   align-items: center;
-  justify-content:center;
-  flex-direction:column;
+  justify-content: center;
+  flex-direction: column;
+    max-width: 350px;
 }
 
 .profile-menu h5 {
@@ -123,6 +131,8 @@ align-items: center;
 .user-profile {
   display: flex;
   justify-content: center;
+  max-width: 350px;
+
 }
 
 .user-info {
@@ -149,6 +159,8 @@ margin-bottom: 10px;
 background-color: white;
 width: 100%;
 border-radius: 4px;
+max-width: 350px;
+
 }
 
 .logout-box a {
@@ -181,6 +193,8 @@ background-color: white;
 border-radius: 4px;
 padding: 20px;
 margin-top: 12px;
+max-width: 350px;
+
 }
 
 #product_value {

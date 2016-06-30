@@ -40,10 +40,10 @@
 
 .input-file-trigger {
   width: 120px;
-  height: 80px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: rgb(245, 245, 245);
+  background-color: white;
+  border: 1px solid #ccc;
     &:before {
       font-family: FontAwesome;
       content: '\f067';
