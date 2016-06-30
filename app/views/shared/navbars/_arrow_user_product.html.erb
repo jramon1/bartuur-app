@@ -7,7 +7,7 @@
   <div>
     <ul class="list-inline">
       <li>
-        <%= cl_image_tag @other_user.picture, class: "avatar" %>
+        <%= cl_image_tag @other_user.picture, class: "avatar", height: 40, width: 40, crop: "pad"  %>
       </li>
       <li>
         <h5><%= @other_user.first_name %> <%= @other_user.last_name[0,1] %>.</h5>
