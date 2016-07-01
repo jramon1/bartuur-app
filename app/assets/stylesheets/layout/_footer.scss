@@ -1,13 +1,19 @@
 
 #footer {
-  display:block;
-  bottom:0px;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
   height: 64px;
   display:flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  max-width: 350px;
+  max-width: 100%;
+}
+
+.simple_form.new_appreciation {
+  width: 50%;
 }
 
 .icon-footer {
@@ -17,7 +23,7 @@
 .icon-footer {
  height: 64px;
  margin: 0 auto;
- width: 175px;
+ width: 100%;
 }
 
 .fa-times{
