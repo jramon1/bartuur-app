@@ -23,7 +23,7 @@ jesse = User.create!(
   city: "Amsterdam",
   picture: "https://scontent.xx.fbcdn.net/v/t1.0-9/13133237_1164443516901877_3662997524109057160_n.jpg?oh=33ff947dc09e1129091369ba96885d0d&oe=57DD8215",
   friends_count: (100..600).to_a.sample,
-  distance_radius: 5
+  distance_radius: 50
 )
 
 mike = User.create!(
@@ -277,12 +277,12 @@ scuba_gear.save!
 
 vinyl = Product.new(
   name: "J.J. Cale - the Troubadour",
-  description: "Original vinyl press from the 80's.",
+  description: "Original vinyl press from the 70's.",
   value: 2,
   user: jurjen
 )
 
-["1.JPG", "2.JPG"].each do |filename|
+["1.JPG", "2.JPG", "3.JPG"].each do |filename|
   photo = Cloudinary::Uploader.upload(Rails.root.join("db/seeds/images/vinyl/#{filename}"))
 
   vinyl.photos << Attachinary::File.new({
