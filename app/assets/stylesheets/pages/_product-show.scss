@@ -57,12 +57,12 @@
     width: 100%;
     word-wrap: break-word;
     padding: 10px;
-    flex: 0 0 100%;
+    flex: 0 0 85%;
 }
 
 .content-flex {
       display: flex;
-    justify-content: space-between;
+   justify-content: flex-start;
     align-items: center;
 }
 
@@ -282,5 +282,9 @@ flex: 0 0 23%;
   color: white;
 }
 
+.white-space{
+height:74px;
+background-color:#F9F9F9 ;
+}
 
 
