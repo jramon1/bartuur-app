@@ -5,10 +5,10 @@
 	<i class="fa fa-times"></i>
 	<% end %>
 	<% end %>
-       <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
-       <%= f.hidden_field :liked %>
-       <%= button_tag(type: 'submit', class: "icon-footer green") do %>
-       <i class="fa fa-check"></i>
-       <% end %>
-       <% end %>
-   </div>
+ <%= simple_form_for @appreciation_positive, url: product_appreciations_path(@product.id) do |f| %>
+ <%= f.hidden_field :liked %>
+ <%= button_tag(type: 'submit', class: "icon-footer green") do %>
+ <i class="fa fa-check"></i>
+ <% end %>
+ <% end %>
+</div>
