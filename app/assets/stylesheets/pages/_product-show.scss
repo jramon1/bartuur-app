@@ -61,9 +61,10 @@
 }
 
 .content-flex {
-      display: flex;
-   justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .content-flex-2 {
@@ -77,6 +78,13 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 65px;
+
+}
+
+.content-flex-4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
