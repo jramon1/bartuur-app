@@ -30,9 +30,9 @@
       <% @matches.each do |match| %>
       <%= render 'account/matches/match', match: match, product: match_product(match), other_product: match_other_product(match) %>
       <% end %>
-      <%=link_to root_path do%>
-      <button type="button" class="btn btn-default btn-lg", >Keep on Bartuuring!</button>
-      <%end  %>
+      <%= link_to root_path do %>
+      <button type="button" class="btn btn-default btn-lg">Keep on Bartuuring!</button>
+      <% end  %>
     </div>
   </div>
 </div>
