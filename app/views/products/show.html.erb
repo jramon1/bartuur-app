@@ -6,7 +6,7 @@
         <div class="product-swipe-flex">
           <div class="product-swipe-image">
             <% if @product.photos.any? %>
-            <%= cl_image_tag(@product.photos.first.path, class:"product-image",  height:300, width:325, crop: "pad", id: "product-photo") %>
+            <%= cl_image_tag(@product.photos.first.path, class:"product-image",  height:350, width:325, crop: "pad", id: "product-photo") %>
             <% end %>
           </div>
           <div class="content-flex">
@@ -25,8 +25,6 @@
        </div>
      </div>
    </div>
-     <div class="white-space
-     "></div>
 
    <!-- Mike's work product description -->
    <div class="carousel-container" type="button" id="carousel-container">
@@ -50,7 +48,7 @@
             <%else  %>
             <div class="item">
               <%end  %>
-              <%= cl_image_tag photo.path, height:300, width:325, crop: "pad", class:"product-image" %>
+              <%= cl_image_tag photo.path, height:350, width:325, crop: "pad", class:"product-image" %>
             </div>
             <%end  %>
           </div>
@@ -115,8 +113,6 @@
       </div>
     </div>
   </div>
-  <div class="white-space
-  "></div>
 <%= render 'shared/footer' %>
 </div>
 </div>

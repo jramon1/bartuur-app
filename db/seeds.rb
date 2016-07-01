@@ -139,7 +139,7 @@ harmonica = Product.new(
   name: "Hohner Super 64 Harmonica",
   description: "Tried to play this work of art, but never managed.",
   value: 2,
-  user: walter
+  user: mike
 )
 
 ["1.JPG", "2.JPG", "3.JPG"].each do |filename|
